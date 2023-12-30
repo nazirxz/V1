@@ -84,7 +84,7 @@
         android:id="@+id/imageView5"
         android:layout_width="397dp"
         android:layout_height="452dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="116dp"
         android:background="@drawable/ic_bgsign"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
