@@ -1,13 +1,14 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources>
     <style name="Theme.SuksesDidikan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/white</item>
 
         <!-- Secondary brand color. -->
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Status bar color. Mengubahnya menjadi warna #00FB55 -->
+        <item name="android:statusBarColor">#418698</item>
+
         <!-- Customize your theme here. -->
     </style>
 </resources>

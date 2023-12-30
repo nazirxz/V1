@@ -1,0 +1,66 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="116dp"
+    android:height="117dp"
+    android:viewportWidth="116"
+    android:viewportHeight="117">
+  <path
+      android:pathData="M0,47.5a71.5,69.5 0,1 0,143 0a71.5,69.5 0,1 0,-143 0z">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:centerX="1.29"
+          android:centerY="-17.86"
+          android:gradientRadius="191.59"
+          android:type="radial">
+        <item android:offset="0" android:color="#66FFFFFF"/>
+        <item android:offset="1" android:color="#00FFFFFF"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M141.5,47.5C141.5,85.02 110.2,115.5 71.5,115.5C32.8,115.5 1.5,85.02 1.5,47.5C1.5,9.98 32.8,-20.5 71.5,-20.5C110.2,-20.5 141.5,9.98 141.5,47.5Z"
+      android:strokeWidth="3"
+      android:fillColor="#00000000">
+    <aapt:attr name="android:strokeColor">
+      <gradient 
+          android:centerX="1.29"
+          android:centerY="-17.86"
+          android:gradientRadius="191.59"
+          android:type="radial">
+        <item android:offset="0" android:color="#00D8D8D8"/>
+        <item android:offset="1" android:color="#FFD8D8D8"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M141.5,47.5C141.5,85.02 110.2,115.5 71.5,115.5C32.8,115.5 1.5,85.02 1.5,47.5C1.5,9.98 32.8,-20.5 71.5,-20.5C110.2,-20.5 141.5,9.98 141.5,47.5Z"
+      android:strokeWidth="3"
+      android:fillColor="#00000000">
+    <aapt:attr name="android:strokeColor">
+      <gradient 
+          android:centerX="1.97"
+          android:centerY="112.75"
+          android:gradientRadius="190.62"
+          android:type="radial">
+        <item android:offset="0" android:color="#00D8D8D8"/>
+        <item android:offset="1" android:color="#FFD8D8D8"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M141.5,47.5C141.5,85.02 110.2,115.5 71.5,115.5C32.8,115.5 1.5,85.02 1.5,47.5C1.5,9.98 32.8,-20.5 71.5,-20.5C110.2,-20.5 141.5,9.98 141.5,47.5Z"
+      android:strokeWidth="3"
+      android:fillColor="#00000000">
+    <aapt:attr name="android:strokeColor">
+      <gradient 
+          android:startX="2.65"
+          android:startY="-18.21"
+          android:endX="166.48"
+          android:endY="58.8"
+          android:type="linear">
+        <item android:offset="0" android:color="#E5FFFFFF"/>
+        <item android:offset="1" android:color="#00FFFFFF"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+</vector>
