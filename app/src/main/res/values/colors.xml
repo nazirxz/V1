@@ -3,4 +3,6 @@
     <color name="app">#F4D2B8</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#0046FB</color>
+    <color name="bluebg">#4285F4</color>
 </resources>
