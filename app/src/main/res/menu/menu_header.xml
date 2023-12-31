@@ -2,8 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
+<group android:checkableBehavior="single">
     <item android:id="@+id/kelas7" android:title="Kelas VII" />
     <item android:id="@+id/kelas8" android:title="Kelas VIII" />
     <item android:id="@+id/kelas9" android:title="Kelax IX" />
+</group>
 </menu>
