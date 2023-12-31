@@ -1,7 +1,9 @@
 package com.example.suksesdidikan
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.suksesdidikan.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,5 +27,19 @@ class MainActivity : AppCompatActivity() {
                 binding.drawerLayout.openDrawer(binding.navigationView)
             }
         }
+        // Membuat adapter dan mengatur ke RecyclerView
+        val adapter = RekomenAdapter(dummyList) { selectedItem ->
+            // Lakukan apa pun yang ingin Anda lakukan ketika item diklik di sini
+            // Contohnya, menuju ke halaman lain dengan data yang dipilih
+            val intent = Intent(this, KursusActivity::class.java)
+//            intent.putExtra("selected_item", selectedItem)
+            startActivity(intent)
+        }
+
+        // Mengatur LayoutManager untuk RecyclerView
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvRekomen.layoutManager = layoutManager
+        binding.rvRekomen.adapter = adapter
+
     }
 }
