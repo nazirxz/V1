@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg"
+    tools:context=".SignUpActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -83,8 +84,8 @@
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="394dp"
-        android:layout_height="546dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="556dp"
+        android:layout_marginBottom="88dp"
         android:background="@drawable/ic_bgsign"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -343,6 +344,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.406" />
+        app:layout_constraintVertical_bias="0.258" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

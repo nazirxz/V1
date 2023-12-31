@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg"
+    tools:context=".OnboardingActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -32,7 +33,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/passeroone"
         android:text="SuksesDidikan"
         android:textColor="@color/app"
@@ -45,7 +46,7 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="336dp"
-        android:layout_height="103dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:fontFamily="@font/opensansregular"
         android:text="Pendidikan adalah senjata paling ampuh yang dapat kamu gunakan untuk mengubah dunia"
