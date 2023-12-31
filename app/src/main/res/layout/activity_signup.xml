@@ -83,7 +83,7 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="394dp"
+        android:layout_width="match_parent"
         android:layout_height="556dp"
         android:layout_marginBottom="88dp"
         android:background="@drawable/ic_bgsign"
