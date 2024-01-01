@@ -27,6 +27,21 @@ class MainActivity : AppCompatActivity() {
                 binding.drawerLayout.openDrawer(binding.navigationView)
             }
         }
+
+        //filter data kelas
+        binding.btn7.setOnClickListener {
+            filterByKelas("VII")
+        }
+
+        binding.btn8.setOnClickListener {
+            filterByKelas("VIII")
+        }
+
+        binding.btn9.setOnClickListener {
+            filterByKelas("IX")
+        }
+
+
         binding.bottomNavigation.selectedItemId = R.id.bottom_home
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -68,5 +83,9 @@ class MainActivity : AppCompatActivity() {
         binding.rvRekomen.layoutManager = layoutManager
         binding.rvRekomen.adapter = adapter
 
+    }
+    private fun filterByKelas(kelas: String) {
+        val filteredList = dummyList.filter { it.kelas == kelas }
+        (binding.rvRekomen.adapter as? RekomenAdapter)?.updateList(filteredList)
     }
 }

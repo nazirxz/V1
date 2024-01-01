@@ -13,8 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/header_nav"
-        app:menu="@menu/menu_header" />
+        app:headerLayout="@layout/header_nav" />
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -105,13 +104,13 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAgama"
+        android:id="@+id/btn7"
         android:layout_width="63dp"
         android:layout_height="31dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/cv_frame"
         android:fontFamily="@font/opensansregular"
-        android:text="Agama"
+        android:text="Kelas VII"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,34 +118,34 @@
         app:layout_constraintVertical_bias="0.708" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPpkn"
+        android:id="@+id/btn8"
         android:layout_width="63dp"
         android:layout_height="31dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/cv_frame"
         android:fontFamily="@font/opensansregular"
-        android:text="PPKN"
+        android:text="Kelas VIII"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="@+id/btnAgama"
-        app:layout_constraintStart_toEndOf="@+id/btnAgama"
-        app:layout_constraintTop_toTopOf="@+id/btnAgama"
+        app:layout_constraintBottom_toBottomOf="@+id/btn7"
+        app:layout_constraintStart_toEndOf="@+id/btn7"
+        app:layout_constraintTop_toTopOf="@+id/btn7"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnBing"
+        android:id="@+id/btn9"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/cv_frame"
         android:fontFamily="@font/opensansregular"
         android:padding="5dp"
-        android:text="Bahasa Inggris"
+        android:text="Kelas IX"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="@+id/btnPpkn"
+        app:layout_constraintBottom_toBottomOf="@+id/btn8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnPpkn"
-        app:layout_constraintTop_toTopOf="@+id/btnPpkn"
+        app:layout_constraintStart_toEndOf="@+id/btn8"
+        app:layout_constraintTop_toTopOf="@+id/btn8"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -169,6 +168,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="15dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
