@@ -18,6 +18,7 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val userName = intent.getStringExtra("USER_NAME")
         pieChartData()
         columnChartData()
         binding.bottomNavigation.selectedItemId = R.id.bottom_result
@@ -25,12 +26,14 @@ class ResultActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.bottom_home -> {
                     val intent = Intent(this@ResultActivity,MainActivity::class.java)
+                    intent.putExtra("USER_NAME", userName)
                     startActivity(intent)
                     finish()
                     true
                 }
                 R.id.bottom_materi -> {
                     val intent = Intent(this@ResultActivity,DaftarMateriActivity::class.java)
+                    intent.putExtra("USER_NAME", userName)
                     startActivity(intent)
                     finish()
                     true

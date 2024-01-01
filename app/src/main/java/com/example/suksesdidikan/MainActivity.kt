@@ -35,12 +35,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.bottom_materi -> {
                     val intent = Intent(this@MainActivity, DaftarMateriActivity::class.java)
+                    intent.putExtra("USER_NAME", userName)
                     startActivity(intent)
                     finish()
                     true
                 }
                 R.id.bottom_result -> {
                     val intent = Intent(this@MainActivity, ResultActivity::class.java)
+                    intent.putExtra("USER_NAME", userName)
                     startActivity(intent)
                     finish()
                     true
@@ -56,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             // Lakukan apa pun yang ingin Anda lakukan ketika item diklik di sini
             // Contohnya, menuju ke halaman lain dengan data yang dipilih
             val intent = Intent(this, KursusActivity::class.java)
+            intent.putExtra("USER_NAME", userName)
 //            intent.putExtra("selected_item", selectedItem)
             startActivity(intent)
         }
