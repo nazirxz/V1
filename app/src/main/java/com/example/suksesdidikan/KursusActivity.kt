@@ -3,6 +3,7 @@ package com.example.suksesdidikan
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.suksesdidikan.databinding.ActivityKursusBinding
 
 class KursusActivity : AppCompatActivity() {
@@ -55,5 +56,19 @@ class KursusActivity : AppCompatActivity() {
         binding.back.setOnClickListener {
             finish()
         }
+        val selectedBabList = getSelectedBabList(dummyList)
+        val adapter = BabAdapter(selectedBabList)
+        binding.rvBab.layoutManager = LinearLayoutManager(this)
+        binding.rvBab.adapter = adapter
+    }
+
+    fun getSelectedBabList(data: List<Buku>): List<Bab> {
+        val selectedBabList = mutableListOf<Bab>()
+        for (buku in data) {
+            buku.isiBab["Bab1"]?.let { selectedBabList.add(it) }
+            buku.isiBab["Bab2"]?.let { selectedBabList.add(it) }
+            buku.isiBab["Bab3"]?.let { selectedBabList.add(it) }
+        }
+        return selectedBabList
     }
 }

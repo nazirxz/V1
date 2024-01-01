@@ -1,15 +1,23 @@
 package com.example.suksesdidikan
 
 data class Buku(
-    val avatar: Int, // URL avatar (gambar)
-    val matapelajaran: String, // Nama
+    val avatar: Int,
+    val matapelajaran: String,
     val kelas: String,
-    val deskripsi:String
+    val deskripsi: String,
+    val isiBab: Map<String, Bab> // Map untuk menyimpan konten dan gambar berdasarkan bab
 )
 
-// Contoh data dummy
 val dummyList: List<Buku> = listOf(
-    Buku(R.drawable.agama, "Agama", "IX","Tim kami sebagian mengambil tugas agama"),
-    Buku(R.drawable.bing, "Bahasa Inggris", "VII","Tim kami sebagian mengambil tugas bahasa inggris"),
-    Buku(R.drawable.ppkn,"PPKN","VIII","Tim kami sebagian mengambil tugas PPKN")
+    Buku(
+        R.drawable.agama,
+        "Agama",
+        "IX",
+        "Deskripsi Agama",
+        mapOf(
+            "Bab1" to Bab("BAB 1 Islam", "Ini adalah isi",R.drawable.agama),
+            "Bab2" to Bab("BAB 2 Pilar Agama","Ini adalah isi", R.drawable.agama),
+            "Bab3" to Bab("BAB 3 Islam" ,"Ini adalah isi",R.drawable.agama)
+        )
+    )
 )
