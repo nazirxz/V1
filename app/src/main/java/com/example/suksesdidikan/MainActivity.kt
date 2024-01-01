@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             // Contohnya, menuju ke halaman lain dengan data yang dipilih
             val intent = Intent(this, KursusActivity::class.java)
             intent.putExtra("USER_NAME", userName)
+            intent.putRekomenExtra(selectedItem)
 //            intent.putExtra("selected_item", selectedItem)
             startActivity(intent)
         }
@@ -87,5 +88,12 @@ class MainActivity : AppCompatActivity() {
     private fun filterByKelas(kelas: String) {
         val filteredList = dummyList.filter { it.kelas == kelas }
         (binding.rvRekomen.adapter as? RekomenAdapter)?.updateList(filteredList)
+    }
+    fun Intent.putRekomenExtra(rekomen: Rekomen) {
+        with(rekomen) {
+            putExtra("AVATAR", avatar)
+            putExtra("MAPELAJARAN", matapelajaran)
+            putExtra("DESKRIPSI", deskripsi)
+        }
     }
 }
