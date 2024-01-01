@@ -1,5 +1,6 @@
 package com.example.suksesdidikan
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +27,12 @@ class BabAdapter(private val babList: List<Bab>) : RecyclerView.Adapter<BabAdapt
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val bab = babList[position]
         holder.bind(bab)
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, BelajarMateriActivity::class.java)
+            intent.putExtra("ISI_BAB", bab.isi)
+            intent.putExtra("NAMA_BAB", bab.namaBab)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = babList.size
