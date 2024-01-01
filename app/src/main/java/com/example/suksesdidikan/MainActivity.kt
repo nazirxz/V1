@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // Membuat adapter dan mengatur ke RecyclerView
-        val adapter = RekomenAdapter(dummyList) { selectedItem ->
+        val adapter = BukuAdapter(dummyList) { selectedItem ->
             // Lakukan apa pun yang ingin Anda lakukan ketika item diklik di sini
             // Contohnya, menuju ke halaman lain dengan data yang dipilih
             val intent = Intent(this, KursusActivity::class.java)
@@ -87,9 +87,9 @@ class MainActivity : AppCompatActivity() {
     }
     private fun filterByKelas(kelas: String) {
         val filteredList = dummyList.filter { it.kelas == kelas }
-        (binding.rvRekomen.adapter as? RekomenAdapter)?.updateList(filteredList)
+        (binding.rvRekomen.adapter as? BukuAdapter)?.updateList(filteredList)
     }
-    fun Intent.putRekomenExtra(rekomen: Rekomen) {
+    fun Intent.putRekomenExtra(rekomen: Buku) {
         with(rekomen) {
             putExtra("AVATAR", avatar)
             putExtra("MAPELAJARAN", matapelajaran)

@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.suksesdidikan.databinding.ItemRekomenBinding
-class RekomenAdapter(private var data: List<Rekomen>, private val onItemClick: (Rekomen) -> Unit) :
-    RecyclerView.Adapter<RekomenAdapter.ViewHolder>() {
+class BukuAdapter(private var data: List<Buku>, private val onItemClick: (Buku) -> Unit) :
+    RecyclerView.Adapter<BukuAdapter.ViewHolder>() {
 
     // Fungsi untuk memperbarui data di dalam adapter
-    fun updateList(newList: List<Rekomen>) {
+    fun updateList(newList: List<Buku>) {
         data = newList
         notifyDataSetChanged()
     }
@@ -29,7 +29,7 @@ class RekomenAdapter(private var data: List<Rekomen>, private val onItemClick: (
 
     inner class ViewHolder(private val binding: ItemRekomenBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Rekomen) {
+        fun bind(item:Buku) {
             binding.tvMatpel.text = item.matapelajaran
             binding.tvAvatar.setImageResource(item.avatar)
         }
