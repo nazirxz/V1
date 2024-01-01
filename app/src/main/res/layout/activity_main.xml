@@ -54,11 +54,11 @@
         android:id="@+id/imageView10"
         android:layout_width="358dp"
         android:layout_height="224dp"
-        android:layout_marginBottom="456dp"
+        android:layout_marginBottom="508dp"
         android:background="@drawable/cv_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -104,34 +104,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn7"
-        android:layout_width="63dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/cv_frame"
-        android:fontFamily="@font/opensansregular"
-        android:text="Kelas VII"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.708" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn8"
-        android:layout_width="63dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/cv_frame"
-        android:fontFamily="@font/opensansregular"
-        android:text="Kelas VIII"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="@+id/btn7"
-        app:layout_constraintStart_toEndOf="@+id/btn7"
-        app:layout_constraintTop_toTopOf="@+id/btn7"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn9"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
@@ -148,11 +120,39 @@
         app:layout_constraintTop_toTopOf="@+id/btn8"
         app:layout_constraintVertical_bias="0.0" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn7"
+        android:layout_width="63dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/cv_frame"
+        android:fontFamily="@font/opensansregular"
+        android:text="Kelas VII"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn8"
+        android:layout_width="63dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/cv_frame"
+        android:fontFamily="@font/opensansregular"
+        android:text="Kelas VIII"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btn7"
+        app:layout_constraintStart_toEndOf="@+id/btn7"
+        app:layout_constraintTop_toTopOf="@+id/btn7"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/opensansbold"
         android:text="Rekomendasi Mata Pelajaran"
         android:textColor="@color/black"
@@ -160,7 +160,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintVertical_bias="0.479" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRekomen"
