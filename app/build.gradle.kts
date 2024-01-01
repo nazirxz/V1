@@ -56,4 +56,7 @@ dependencies {
 
     //glide
     implementation ("com.github.bumptech.glide:glide:4.12.0")
+
+    //pie chart
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

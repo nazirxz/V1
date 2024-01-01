@@ -8,11 +8,11 @@
     tools:context=".KursusActivity">
 
     <ImageView
-        android:id="@+id/drawer"
+        android:id="@+id/back"
         android:layout_width="29dp"
         android:layout_height="26dp"
         android:layout_marginTop="36dp"
-        android:src="@drawable/ic_drawer"
+        android:src="@drawable/caret_left"
         app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toStartOf="@+id/tv_matapelajaran"
         app:layout_constraintHorizontal_bias="0.149"

@@ -27,6 +27,30 @@ class MainActivity : AppCompatActivity() {
                 binding.drawerLayout.openDrawer(binding.navigationView)
             }
         }
+        binding.bottomNavigation.selectedItemId = R.id.bottom_home
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_home -> {
+                    true
+                }
+                R.id.bottom_materi -> {
+                    val intent = Intent(this@MainActivity, DaftarMateriActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                    true
+                }
+                R.id.bottom_result -> {
+                    val intent = Intent(this@MainActivity, ResultActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                    true
+                }
+                // Tambahkan case untuk item lain jika diperlukan
+                else -> false
+            }
+        }
+
+
         // Membuat adapter dan mengatur ke RecyclerView
         val adapter = RekomenAdapter(dummyList) { selectedItem ->
             // Lakukan apa pun yang ingin Anda lakukan ketika item diklik di sini

@@ -5,19 +5,11 @@
         android:icon="@drawable/ic_home"
         android:title="Home" />
     <item
-        android:id="@+id/bottom_univ"
+        android:id="@+id/bottom_result"
         android:icon="@drawable/ic_university"
-        android:title="Search" />
+        android:title="Result" />
     <item
-        android:id="@+id/bottom_notif"
+        android:id="@+id/bottom_materi"
         android:icon="@drawable/ic_lightbulb"
-        android:title="Settings" />
-    <item
-        android:id="@+id/bottom_bell"
-        android:icon="@drawable/ic_notification"
-        android:title="Settings" />
-    <item
-        android:id="@+id/bottom_profile"
-        android:icon="@drawable/ic_user2"
-        android:title="Profile" />
+        android:title="Materi" />
 </menu>
