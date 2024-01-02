@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.suksesdidikan.databinding.ItemMateribabBinding
 
-class DaftarBabAdapter(private val bukuList: List<Buku>) :
+class DaftarBabAdapter(private var filteredList: List<Buku>) :
     RecyclerView.Adapter<DaftarBabAdapter.BelajarMateriViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BelajarMateriViewHolder {
@@ -16,12 +16,17 @@ class DaftarBabAdapter(private val bukuList: List<Buku>) :
     }
 
     override fun onBindViewHolder(holder: BelajarMateriViewHolder, position: Int) {
-        val buku = bukuList[position]
+        val buku = filteredList[position] // Gunakan filteredList, bukan bukuList
         holder.bind(buku)
     }
 
     override fun getItemCount(): Int {
-        return bukuList.size
+        return filteredList.size // Menggunakan filteredList.size
+    }
+
+    fun filterByMatapelajaran(matapelajaran: String) {
+        filteredList = filteredList.filter { it.matapelajaran.equals(matapelajaran, ignoreCase = true) }
+        notifyDataSetChanged()
     }
 
     inner class BelajarMateriViewHolder(private val binding: ItemMateribabBinding) :

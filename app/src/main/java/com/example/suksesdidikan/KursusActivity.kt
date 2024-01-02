@@ -56,18 +56,20 @@ class KursusActivity : AppCompatActivity() {
         binding.back.setOnClickListener {
             finish()
         }
-        val selectedBabList = getSelectedBabList(dummyList)
+        val selectedBabList = getSelectedBabList(dummyList, matapelajaran ?: "")
         val adapter = BabAdapter(selectedBabList)
         binding.rvBab.layoutManager = LinearLayoutManager(this)
         binding.rvBab.adapter = adapter
     }
 
-    fun getSelectedBabList(data: List<Buku>): List<Bab> {
+    fun getSelectedBabList(data: List<Buku>, mataPelajaran: String?): List<Bab> {
         val selectedBabList = mutableListOf<Bab>()
-        for (buku in data) {
-            buku.isiBab["Bab1"]?.let { selectedBabList.add(it) }
-            buku.isiBab["Bab2"]?.let { selectedBabList.add(it) }
-            buku.isiBab["Bab3"]?.let { selectedBabList.add(it) }
+        mataPelajaran?.let { selectedMapel ->
+            for (buku in data) {
+                if (buku.matapelajaran.equals(selectedMapel, ignoreCase = true)) {
+                    selectedBabList.addAll(buku.isiBab.values)
+                }
+            }
         }
         return selectedBabList
     }

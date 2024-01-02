@@ -53,6 +53,8 @@ class DaftarMateriActivity: AppCompatActivity() {
                 val intent = Intent(this@DaftarMateriActivity, DaftarBabActivity::class.java)
                 val serializableExtra = buku.isiBab as Serializable
                 intent.putExtra("ISI_BAB_MAP", serializableExtra)
+                // Tambahkan informasi tentang mata pelajaran ke intent
+                intent.putExtra("MAPELAJARAN", buku.matapelajaran)
                 startActivity(intent)
             }
         })

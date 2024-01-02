@@ -15,28 +15,24 @@ class DaftarBabActivity : AppCompatActivity() {
         binding = ActivityDaftarbabBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize adapter with your list of Buku
+
+            // Set initial adapter with the full list
         daftarBabAdapter = DaftarBabAdapter(dummyList)
-
-        // Set adapter to the RecyclerView
         binding.rvBab.adapter = daftarBabAdapter
-
-        // Set layout manager to the RecyclerView
         binding.rvBab.layoutManager = LinearLayoutManager(this)
+
         val userName = intent.getStringExtra("USER_NAME")
         binding.bottomNavigation.selectedItemId = R.id.bottom_materi
-        binding.bottomNavigation.setOnItemSelectedListener{ item ->
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_home -> {
-                    val intent = Intent(this@DaftarBabActivity,MainActivity::class.java)
+                    val intent = Intent(this@DaftarBabActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     startActivity(intent)
                     finish()
                     true
                 }
-                R.id.bottom_materi -> {
-                    true
-                }
+                R.id.bottom_materi -> true
                 R.id.bottom_result -> {
                     val intent = Intent(this@DaftarBabActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
@@ -44,9 +40,18 @@ class DaftarBabActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-                // Tambahkan case untuk item lain jika diperlukan
                 else -> false
             }
         }
+
+        // Get the selected mata pelajaran from the intent
+        val matapelajaran = intent.getStringExtra("MAPELAJARAN")
+
+        // Filter the list based on the selected mata pelajaran
+        val filteredList = dummyList.filter { it.matapelajaran.equals(matapelajaran, ignoreCase = true) }
+
+        // Update the adapter with the filtered list
+        daftarBabAdapter = DaftarBabAdapter(filteredList)
+        binding.rvBab.adapter = daftarBabAdapter
     }
 }
