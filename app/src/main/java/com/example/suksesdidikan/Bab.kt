@@ -1,6 +1,9 @@
 package com.example.suksesdidikan
+
+import java.io.Serializable
+
 data class Bab(
     val namaBab: String,
     val isi: String,
-    val gambar: Int // Sumber daya gambar untuk setiap bab
-)
+    val gambar: Int
+) : Serializable
