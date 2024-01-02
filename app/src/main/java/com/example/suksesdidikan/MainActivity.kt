@@ -1,9 +1,11 @@
 package com.example.suksesdidikan
 
+import Buku
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.suksesdidikan.DummyData.dummyList
 import com.example.suksesdidikan.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -91,7 +93,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun Intent.putRekomenExtra(rekomen: Buku) {
         with(rekomen) {
-            putExtra("AVATAR", avatar)
+            putExtra("AVATAR", gambar)
             putExtra("MAPELAJARAN", matapelajaran)
             putExtra("DESKRIPSI", deskripsi)
         }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.suksesdidikan.DummyData.dummyList
 import com.example.suksesdidikan.databinding.ActivityDaftarbabBinding
 
 class DaftarBabActivity : AppCompatActivity() {
@@ -15,8 +16,7 @@ class DaftarBabActivity : AppCompatActivity() {
         binding = ActivityDaftarbabBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-            // Set initial adapter with the full list
+        // Set initial adapter with the full list
         daftarBabAdapter = DaftarBabAdapter(dummyList)
         binding.rvBab.adapter = daftarBabAdapter
         binding.rvBab.layoutManager = LinearLayoutManager(this)
@@ -48,10 +48,8 @@ class DaftarBabActivity : AppCompatActivity() {
         val matapelajaran = intent.getStringExtra("MAPELAJARAN")
 
         // Filter the list based on the selected mata pelajaran
-        val filteredList = dummyList.filter { it.matapelajaran.equals(matapelajaran, ignoreCase = true) }
-
-        // Update the adapter with the filtered list
-        daftarBabAdapter = DaftarBabAdapter(filteredList)
-        binding.rvBab.adapter = daftarBabAdapter
+        if (!matapelajaran.isNullOrEmpty()) {
+            daftarBabAdapter.filterByMatapelajaran(matapelajaran)
+        }
     }
 }

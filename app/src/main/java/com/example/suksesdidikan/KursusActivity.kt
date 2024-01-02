@@ -1,9 +1,11 @@
 package com.example.suksesdidikan
 
+import Buku
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.suksesdidikan.DummyData.dummyList
 import com.example.suksesdidikan.databinding.ActivityKursusBinding
 
 class KursusActivity : AppCompatActivity() {
@@ -62,12 +64,12 @@ class KursusActivity : AppCompatActivity() {
         binding.rvBab.adapter = adapter
     }
 
-    fun getSelectedBabList(data: List<Buku>, mataPelajaran: String?): List<Bab> {
-        val selectedBabList = mutableListOf<Bab>()
+    fun getSelectedBabList(data: List<Buku>, mataPelajaran: String?): List<BabInfo> {
+        val selectedBabList = mutableListOf<BabInfo>()
         mataPelajaran?.let { selectedMapel ->
             for (buku in data) {
                 if (buku.matapelajaran.equals(selectedMapel, ignoreCase = true)) {
-                    selectedBabList.addAll(buku.isiBab.values)
+                    selectedBabList.addAll(buku.bab)
                 }
             }
         }

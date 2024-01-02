@@ -1,5 +1,6 @@
 package com.example.suksesdidikan
 
+import Buku
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -28,10 +29,14 @@ class BukuAdapter(private var data: List<Buku>, private val onItemClick: (Buku) 
     override fun getItemCount(): Int = data.size
 
     inner class ViewHolder(private val binding: ItemRekomenBinding) : RecyclerView.ViewHolder(binding.root) {
+        init {
+            // Inisialisasi item click di sini
+            itemView.setOnClickListener { onItemClick(data[adapterPosition]) }
+        }
 
-        fun bind(item:Buku) {
+        fun bind(item: Buku) {
             binding.tvMatpel.text = item.matapelajaran
-            binding.tvAvatar.setImageResource(item.avatar)
+            binding.tvAvatar.setImageResource(item.gambar)
         }
     }
 }

@@ -6,36 +6,38 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.suksesdidikan.databinding.ItemBabBinding
 
-class BabAdapter(private val babList: List<Bab>) : RecyclerView.Adapter<BabAdapter.ViewHolder>() {
+class BabAdapter(private val babInfoList: List<BabInfo>) :
+    RecyclerView.Adapter<BabAdapter.BabInfoViewHolder>() {
 
-    inner class ViewHolder(private val binding: ItemBabBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(bab: Bab) {
-            binding.apply {
-                // Tampilkan data bab di sini
-                kursus.text = bab.namaBab
-                avatar.setImageResource(R.drawable.ic_univ)
+    private var onItemClick: ((BabInfo) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (BabInfo) -> Unit) {
+        onItemClick = listener
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BabInfoViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ItemBabBinding.inflate(inflater, parent, false)
+        return BabInfoViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: BabInfoViewHolder, position: Int) {
+        val babInfo = babInfoList[position]
+        holder.bind(babInfo)
+    }
+
+    override fun getItemCount(): Int = babInfoList.size
+
+    inner class BabInfoViewHolder(private val binding: ItemBabBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(babInfo: BabInfo) {
+            binding.kursus.text = babInfo.bab
+
+            // Handle click on item
+            binding.root.setOnClickListener {
+                onItemClick?.invoke(babInfo)
             }
         }
     }
-
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemBabBinding.inflate(inflater, parent, false)
-        return ViewHolder(binding)
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val bab = babList[position]
-        holder.bind(bab)
-        holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, BelajarMateriActivity::class.java)
-            intent.putExtra("ISI_BAB", bab.isi)
-            intent.putExtra("NAMA_BAB", bab.namaBab)
-            holder.itemView.context.startActivity(intent)
-        }
-    }
-
-    override fun getItemCount(): Int = babList.size
 }

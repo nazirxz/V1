@@ -1,5 +1,6 @@
 package com.example.suksesdidikan
 
+import Buku
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -44,7 +45,7 @@ class DaftarMatpelAdapter(private val matpelList: List<Buku>) :
 
         fun bind(matpel: Buku) {
             binding.materi.text = matpel.matapelajaran
-            binding.avatar.setImageResource(matpel.avatar)
+            binding.avatar.setImageResource(matpel.gambar)
             binding.description.text = matpel.deskripsi
         }
     }

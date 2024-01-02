@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.suksesdidikan.databinding.ItemSubbabBinding
 
-class SubBabAdapter(private val subBabList: List<Bab>) :
+class SubBabAdapter(private val subBabList: List<BabDetail>) :
     RecyclerView.Adapter<SubBabAdapter.SubBabViewHolder>() {
 
-    private var onItemClick: ((Bab) -> Unit)? = null
+    private var onItemClick: ((BabDetail) -> Unit)? = null
 
-    fun setOnItemClickListener(listener: (Bab) -> Unit) {
+    fun setOnItemClickListener(listener: (BabDetail) -> Unit) {
         onItemClick = listener
     }
 
@@ -32,8 +32,8 @@ class SubBabAdapter(private val subBabList: List<Bab>) :
     inner class SubBabViewHolder(private val binding: ItemSubbabBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(subBab: Bab) {
-            binding.subbab.text = subBab.namaBab
+        fun bind(subBab: BabDetail) {
+            binding.subbab.text = subBab.judul
 
             // Handle click on sub-item
             binding.root.setOnClickListener {

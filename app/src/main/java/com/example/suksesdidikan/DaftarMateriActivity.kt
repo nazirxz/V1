@@ -1,9 +1,11 @@
 package com.example.suksesdidikan
 
+import Buku
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.suksesdidikan.DummyData.dummyList
 import com.example.suksesdidikan.databinding.ActivityDaftarmatapelajaranBinding
 import java.io.Serializable
 
@@ -49,12 +51,18 @@ class DaftarMateriActivity: AppCompatActivity() {
         binding.rvMataPelajaran.layoutManager = LinearLayoutManager(this)
         daftarMatpelAdapter.setOnItemClickListener(object : DaftarMatpelAdapter.OnItemClickListener {
             override fun onItemClick(buku: Buku) {
-                // Serialize isiBab map into intent extras
                 val intent = Intent(this@DaftarMateriActivity, DaftarBabActivity::class.java)
-                val serializableExtra = buku.isiBab as Serializable
-                intent.putExtra("ISI_BAB_MAP", serializableExtra)
-                // Tambahkan informasi tentang mata pelajaran ke intent
+
+                // Buat ArrayList dari semua detail bab
+                val babDetails = ArrayList<BabDetail>()
+                for (babInfo in buku.bab) {
+                    babDetails.addAll(babInfo.isi)
+                }
+
+                // Kirim ArrayList babDetails dan mata pelajaran ke activity berikutnya
+                intent.putExtra("BAB_DETAILS", babDetails as Serializable)
                 intent.putExtra("MAPELAJARAN", buku.matapelajaran)
+
                 startActivity(intent)
             }
         })
