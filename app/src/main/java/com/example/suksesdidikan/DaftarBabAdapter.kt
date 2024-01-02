@@ -8,18 +8,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.suksesdidikan.DummyData.dummyList
 import com.example.suksesdidikan.databinding.ItemMateribabBinding
 
-class DaftarBabAdapter(private var filteredList: List<Buku>) :
-    RecyclerView.Adapter<DaftarBabAdapter.BelajarMateriViewHolder>() {
+class DaftarBabAdapter(
+    private var babInfoList: List<BabInfo>,
+    private var bukuList: List<Buku>
+) : RecyclerView.Adapter<DaftarBabAdapter.ParentViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BelajarMateriViewHolder {
+    private var filteredList: List<BabInfo> = babInfoList
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParentViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemMateribabBinding.inflate(inflater, parent, false)
-        return BelajarMateriViewHolder(binding)
+        return ParentViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: BelajarMateriViewHolder, position: Int) {
-        val buku = filteredList[position]
-        holder.bind(buku)
+    override fun onBindViewHolder(holder: ParentViewHolder, position: Int) {
+        val babInfo = filteredList[position]
+        holder.bind(babInfo)
     }
 
     override fun getItemCount(): Int {
@@ -27,30 +31,25 @@ class DaftarBabAdapter(private var filteredList: List<Buku>) :
     }
 
     fun filterByMatapelajaran(matapelajaran: String) {
-        filteredList = dummyList.filter { it.matapelajaran.equals(matapelajaran, ignoreCase = true) }
+        filteredList = babInfoList.filter { babInfo ->
+            bukuList.any { buku ->
+                buku.matapelajaran.equals(matapelajaran, ignoreCase = true)
+                        && babInfo.bab in buku.bab.map { it.bab }
+            }
+        }
         notifyDataSetChanged()
     }
 
-    inner class BelajarMateriViewHolder(private val binding: ItemMateribabBinding) :
+    inner class ParentViewHolder(private val binding: ItemMateribabBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        private val subRecyclerView: RecyclerView = binding.rvJudulSub
-        private lateinit var subAdapter: SubBabAdapter
+        fun bind(babInfo: BabInfo) {
+            binding.namaBab.text = babInfo.bab
 
-        fun bind(buku: Buku) {
-            binding.namaBab.text = buku.matapelajaran
-
-            val babList = buku.bab.flatMap { it.isi }
-            subAdapter = SubBabAdapter(babList)
-
-            subRecyclerView.apply {
+            val childAdapter = SubBabAdapter(babInfo.isi)
+            binding.childRV.apply {
                 layoutManager = LinearLayoutManager(itemView.context)
-                adapter = subAdapter
-            }
-
-            // Handle click on sub-item
-            subAdapter.setOnItemClickListener { clickedBab ->
-                // Handle your logic here for sub-item click
+                adapter = childAdapter
             }
         }
     }

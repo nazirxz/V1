@@ -16,8 +16,10 @@ class DaftarBabActivity : AppCompatActivity() {
         binding = ActivityDaftarbabBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set initial adapter with the full list
-        daftarBabAdapter = DaftarBabAdapter(dummyList)
+        val allBabInfoList = DummyData.getAllBabInfoFromBooks() // Mengambil semua BabInfo dari Buku
+
+        // Set adapter dengan list BabInfo dan Buku yang sesuai
+        daftarBabAdapter = DaftarBabAdapter(allBabInfoList, DummyData.dummyList)
         binding.rvBab.adapter = daftarBabAdapter
         binding.rvBab.layoutManager = LinearLayoutManager(this)
 
