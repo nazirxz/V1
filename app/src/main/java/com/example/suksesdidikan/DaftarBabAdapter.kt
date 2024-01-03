@@ -1,6 +1,7 @@
 package com.example.suksesdidikan
 
 import Buku
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -41,6 +42,14 @@ class DaftarBabAdapter(
             binding.childRV.apply {
                 layoutManager = LinearLayoutManager(itemView.context)
                 adapter = childAdapter
+                // Handle item click for childRV
+                childAdapter.setOnItemClickListener { babDetail ->
+                    val intent = Intent(itemView.context, BelajarMateriActivity::class.java)
+                    intent.putExtra("ISI_BAB", babDetail.isi)
+                    intent.putExtra("NAMA_BAB", babDetail.judul)
+                    intent.putExtra("BAB",babInfo.bab)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }

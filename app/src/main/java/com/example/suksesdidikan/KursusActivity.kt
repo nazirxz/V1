@@ -29,7 +29,7 @@ class KursusActivity : AppCompatActivity() {
         binding.tvKursus.text = matapelajaran
 
         // Handle bottom navigation
-        binding.bottomNavigation.selectedItemId = R.id.bottom_materi
+        binding.bottomNavigation.selectedItemId = R.id.bottom_home
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_home -> {
@@ -40,7 +40,10 @@ class KursusActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_materi -> {
-                    // No action needed as already on the same screen
+                    val intent = Intent(this@KursusActivity, DaftarMateriActivity::class.java)
+                    intent.putExtra("USER_NAME", userName)
+                    startActivity(intent)
+                    finish()
                     true
                 }
                 R.id.bottom_result -> {
@@ -62,6 +65,14 @@ class KursusActivity : AppCompatActivity() {
         val adapter = BabAdapter(selectedBabList)
         binding.rvBab.layoutManager = LinearLayoutManager(this)
         binding.rvBab.adapter = adapter
+
+        adapter.setOnItemClickListener { babInfo ->
+            val intent = Intent(this@KursusActivity, DaftarBabActivity::class.java)
+            intent.putExtra("USER_NAME", userName)
+            intent.putExtra("MAPELAJARAN", matapelajaran)
+            // Add more data if needed
+            startActivity(intent)
+        }
     }
 
     fun getSelectedBabList(data: List<Buku>, mataPelajaran: String?): List<BabInfo> {

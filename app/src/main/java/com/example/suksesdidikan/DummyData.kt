@@ -29,13 +29,35 @@ object DummyData {
        Buku(
            R.drawable.bing,
            "Bahasa Inggris",
-           "VII",
+           "IX",
            "Deskripsi Bahasa Inggris",
            listOf(
                BabInfo(
                    "Bab 1",
                    listOf(
                        BabDetail("Greeting", "Ini adalah isi", 0),
+                       BabDetail("Expression", "Ini adalah isi", 0)
+                   )
+               ),
+               BabInfo(
+                   "Bab 2",
+                   listOf(
+                       BabDetail("Grammar", "Ini adalah isi", 0),
+                       BabDetail("Attention", "Ini adalah isi", 0)
+                   )
+               )
+           )
+       ),
+       Buku(
+           R.drawable.mtk,
+           "Matematika",
+           "VII",
+           "Matematika adalah ilmu yang mempelajari hal-hal seperti besaran, struktur, ruang dan perubahan",
+           listOf(
+               BabInfo(
+                   "Bab 1 Trigonometri",
+                   listOf(
+                       BabDetail("1.1 Pengukuran Sudut", "Ini adalah isi", 0),
                        BabDetail("Expression", "Ini adalah isi", 0)
                    )
                ),

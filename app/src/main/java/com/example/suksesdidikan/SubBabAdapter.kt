@@ -7,7 +7,7 @@ import com.example.suksesdidikan.databinding.ItemSubbabBinding
 
 class SubBabAdapter(private val list: List<BabDetail>) :
     RecyclerView.Adapter<SubBabAdapter.ChildViewHolder>() {
-
+    private var onItemClickListener: ((BabDetail) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemSubbabBinding.inflate(inflater, parent, false)
@@ -28,7 +28,15 @@ class SubBabAdapter(private val list: List<BabDetail>) :
 
         fun bind(babDetail: BabDetail) {
             binding.subbab.text = babDetail.judul
+            binding.root.setOnClickListener {
+                // Panggil onItemClickListener saat item diklik
+                onItemClickListener!!.invoke(babDetail)
+            }
         }
+    }
+    // Function to set item click listener
+    fun setOnItemClickListener(listener: (BabDetail) -> Unit) {
+        onItemClickListener = listener
     }
 }
 
