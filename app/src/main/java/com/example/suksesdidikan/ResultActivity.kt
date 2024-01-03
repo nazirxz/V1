@@ -3,6 +3,7 @@ package com.example.suksesdidikan
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.suksesdidikan.databinding.ActivityResultBinding
 import com.github.mikephil.charting.data.BarData
@@ -46,7 +47,18 @@ class ResultActivity : AppCompatActivity() {
             }
         }
     }
-
+    override fun onBackPressed() {
+        AlertDialog.Builder(this@ResultActivity, R.style.AlertDialogTheme)
+            .setTitle("Keluar dari Aplikasi")
+            .setMessage("Apakah Anda yakin ingin keluar dari aplikasi?")
+            .setPositiveButton("Iya") { _, _ ->
+                super.onBackPressed()
+            }
+            .setNegativeButton("Tidak") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
     private fun pieChartData() {
         val entries = listOf(
             PieEntry(98f, "Fatur"),  // Data Fatur dengan nilai 98

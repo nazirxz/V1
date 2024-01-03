@@ -56,9 +56,10 @@ class SignUpActivity : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Registrasi berhasil!", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this,MainActivity::class.java))
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("USER_ID", userId) // Mengirim userId sebagai extra
+                        startActivity(intent)
                         finish()
-                        // Lanjutkan ke halaman login atau halaman lain yang diinginkan setelah registrasi sukses
                     } else {
                         Toast.makeText(this, "Registrasi gagal: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }

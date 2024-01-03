@@ -61,9 +61,9 @@ class SignInActivity : AppCompatActivity() {
                             if (user != null && user.password == password) {
                                 // Login berhasil
                                 Toast.makeText(this@SignInActivity, "Login berhasil!", Toast.LENGTH_SHORT).show()
-                                // Lanjutkan ke halaman utama atau halaman lain yang diinginkan setelah login sukses
                                 val intent = Intent(this@SignInActivity, MainActivity::class.java)
                                 intent.putExtra("USER_NAME", userName)
+                                intent.putExtra("USER_ID", userSnapshot.key) // Mengirim userId sebagai extra
                                 startActivity(intent)
                                 finish()
                                 return

@@ -3,6 +3,7 @@ package com.example.suksesdidikan
 import Buku
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.suksesdidikan.DummyData.dummyList
@@ -66,5 +67,17 @@ class DaftarMateriActivity: AppCompatActivity() {
                 startActivity(intent)
             }
         })
+    }
+    override fun onBackPressed() {
+        AlertDialog.Builder(this@DaftarMateriActivity, R.style.AlertDialogTheme)
+            .setTitle("Keluar dari Aplikasi")
+            .setMessage("Apakah Anda yakin ingin keluar dari aplikasi?")
+            .setPositiveButton("Iya") { _, _ ->
+                super.onBackPressed()
+            }
+            .setNegativeButton("Tidak") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 }

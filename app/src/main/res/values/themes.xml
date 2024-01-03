@@ -1,7 +1,7 @@
 <resources>
     <style name="Theme.SuksesDidikan" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">@color/black</item>
 
         <!-- Secondary brand color. -->
         <item name="colorOnSecondary">@color/black</item>
@@ -10,5 +10,11 @@
         <item name="android:statusBarColor">#418698</item>
 
         <!-- Customize your theme here. -->
+    </style>
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Atur properti yang ingin Anda sesuaikan -->
+        <item name="android:colorAccent">@color/white</item>
+        <item name="android:background">@color/bluebg</item>
+        <!-- Sesuaikan properti lain sesuai kebutuhan -->
     </style>
 </resources>
