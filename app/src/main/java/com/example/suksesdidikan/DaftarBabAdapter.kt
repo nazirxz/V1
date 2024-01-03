@@ -16,7 +16,7 @@ class DaftarBabAdapter(
 ) : RecyclerView.Adapter<DaftarBabAdapter.ParentViewHolder>() {
 
     private var filteredList: List<BabInfo> = babInfoList
-
+    private var itemClickListener: ((BabDetail, BabInfo) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParentViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemMateribabBinding.inflate(inflater, parent, false)
@@ -42,15 +42,15 @@ class DaftarBabAdapter(
             binding.childRV.apply {
                 layoutManager = LinearLayoutManager(itemView.context)
                 adapter = childAdapter
+
                 // Handle item click for childRV
                 childAdapter.setOnItemClickListener { babDetail ->
-                    val intent = Intent(itemView.context, BelajarMateriActivity::class.java)
-                    intent.putExtra("ISI_BAB", babDetail.isi)
-                    intent.putExtra("NAMA_BAB", babDetail.judul)
-                    intent.putExtra("BAB",babInfo.bab)
-                    itemView.context.startActivity(intent)
+                    itemClickListener?.invoke(babDetail, babInfo)
                 }
             }
         }
+    }
+    fun setOnItemClickListener(listener: (BabDetail, BabInfo) -> Unit) {
+        itemClickListener = listener
     }
 }

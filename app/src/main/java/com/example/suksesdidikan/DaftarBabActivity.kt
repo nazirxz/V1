@@ -54,7 +54,14 @@ class DaftarBabActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
+        daftarBabAdapter.setOnItemClickListener { babDetail, babInfo ->
+            val intent = Intent(this, BelajarMateriActivity::class.java)
+            intent.putExtra("ISI_BAB", babDetail.isi)
+            intent.putExtra("NAMA_BAB", babDetail.judul)
+            intent.putExtra("BAB", babInfo.bab)
+            intent.putExtra("USER_NAME", userName)
+            startActivity(intent)
+        }
         binding.btnBack.setOnClickListener {
             finish()
         }

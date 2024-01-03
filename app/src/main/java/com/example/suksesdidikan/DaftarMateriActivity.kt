@@ -62,7 +62,7 @@ class DaftarMateriActivity: AppCompatActivity() {
                 // Kirim ArrayList babDetails dan mata pelajaran ke activity berikutnya
                 intent.putExtra("BAB_DETAILS", babDetails as Serializable)
                 intent.putExtra("MAPELAJARAN", buku.matapelajaran)
-
+                intent.putExtra("USER_NAME", userName)
                 startActivity(intent)
             }
         })

@@ -28,9 +28,9 @@ class SubBabAdapter(private val list: List<BabDetail>) :
 
         fun bind(babDetail: BabDetail) {
             binding.subbab.text = babDetail.judul
+
             binding.root.setOnClickListener {
-                // Panggil onItemClickListener saat item diklik
-                onItemClickListener!!.invoke(babDetail)
+                onItemClickListener?.invoke(babDetail)
             }
         }
     }

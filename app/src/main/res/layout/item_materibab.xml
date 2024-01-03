@@ -29,6 +29,7 @@
             android:layout_marginEnd="20dp"
             tools:listitem="@layout/item_subbab"
             tools:itemCount="4"
+            android:clickable="true"
             />
 
 

@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //filter data kelas
-        binding.btn7.setOnClickListener {
+        binding.btn7.setOnClickListener { 
             filterByKelas("VII")
         }
 
