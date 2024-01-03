@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.suksesdidikan.DummyData.dummyList
 import com.example.suksesdidikan.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -20,18 +21,14 @@ class MainActivity : AppCompatActivity() {
         val welcomeText = "Hello $userName"
         binding.tvWelcome.text = welcomeText
 
-        // Mengatur klik listener pada tombol drawer
-        binding.drawer.setOnClickListener {
-            // Menampilkan atau menyembunyikan navigation drawer sesuai status saat ini
-            if (binding.drawerLayout.isDrawerOpen(binding.navigationView)) {
-                binding.drawerLayout.closeDrawer(binding.navigationView)
-            } else {
-                binding.drawerLayout.openDrawer(binding.navigationView)
-            }
+        binding.logout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this@MainActivity, OnboardingActivity::class.java)
+            startActivity(intent)
+            finish()
         }
-
         //filter data kelas
-        binding.btn7.setOnClickListener { 
+        binding.btn7.setOnClickListener {
             filterByKelas("VII")
         }
 

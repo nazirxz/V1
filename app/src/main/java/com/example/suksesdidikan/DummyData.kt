@@ -111,13 +111,6 @@ object DummyData {
                                "3–√=90AB\n" +
                                "AB = 303–√", 0)
                    )
-               ),
-               BabInfo(
-                   "Bab 2",
-                   listOf(
-                       BabDetail("Grammar", "Ini adalah isi", 0),
-                       BabDetail("Attention", "Ini adalah isi", 0)
-                   )
                )
            )
        ),

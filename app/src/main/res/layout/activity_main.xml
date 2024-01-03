@@ -8,12 +8,6 @@
     android:layout_height="match_parent">
     <!-- Header NavigationView -->
     <!-- Drawer Navigation -->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/header_nav" />
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -22,11 +16,11 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/drawer"
+        android:id="@+id/logout"
         android:layout_width="29dp"
         android:layout_height="26dp"
         android:layout_marginTop="36dp"
-        android:src="@drawable/ic_drawer"
+        android:src="@drawable/logout"
         app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toStartOf="@+id/tv_welcome"
         app:layout_constraintHorizontal_bias="0.149"
