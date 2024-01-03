@@ -51,12 +51,14 @@ object DummyData {
         // ... dan seterusnya untuk buku-buku lainnya
     )
     // Mendapatkan semua BabInfo dari semua Buku
-    fun getAllBabInfoFromBooks(): List<BabInfo> {
+    fun getAllBabInfoFromBooks(matapelajaran: String): List<BabInfo> {
         val allBabInfos = mutableListOf<BabInfo>()
 
-        // Iterate melalui setiap Buku dan tambahkan semua BabInfo ke dalam list
+        // Iterate melalui setiap Buku dan tambahkan semua BabInfo yang sesuai ke dalam list
         dummyList.forEach { buku ->
-            allBabInfos.addAll(buku.bab)
+            if (buku.matapelajaran.equals(matapelajaran, ignoreCase = true)) {
+                allBabInfos.addAll(buku.bab)
+            }
         }
 
         return allBabInfos

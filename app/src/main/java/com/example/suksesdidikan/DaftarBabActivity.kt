@@ -16,14 +16,17 @@ class DaftarBabActivity : AppCompatActivity() {
         binding = ActivityDaftarbabBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val allBabInfoList = DummyData.getAllBabInfoFromBooks() // Mengambil semua BabInfo dari Buku
+        val userName = intent.getStringExtra("USER_NAME")
+        val matapelajaran = intent.getStringExtra("MAPELAJARAN") ?: ""
 
-        // Set adapter dengan list BabInfo dan Buku yang sesuai
-        daftarBabAdapter = DaftarBabAdapter(allBabInfoList, DummyData.dummyList)
+        // Get the filtered list of BabInfo based on the selected mata pelajaran
+        val filteredBabInfoList = DummyData.getAllBabInfoFromBooks(matapelajaran)
+
+        // Set adapter with the filtered list of BabInfo and the full list of Buku
+        daftarBabAdapter = DaftarBabAdapter(filteredBabInfoList, DummyData.dummyList)
         binding.rvBab.adapter = daftarBabAdapter
         binding.rvBab.layoutManager = LinearLayoutManager(this)
 
-        val userName = intent.getStringExtra("USER_NAME")
         binding.bottomNavigation.selectedItemId = R.id.bottom_materi
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -34,7 +37,13 @@ class DaftarBabActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-                R.id.bottom_materi -> true
+                R.id.bottom_materi ->{
+                    val intent = Intent(this@DaftarBabActivity, DaftarMateriActivity::class.java)
+                    intent.putExtra("USER_NAME", userName)
+                    startActivity(intent)
+                    finish()
+                    true
+                }
                 R.id.bottom_result -> {
                     val intent = Intent(this@DaftarBabActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
@@ -46,12 +55,8 @@ class DaftarBabActivity : AppCompatActivity() {
             }
         }
 
-        // Get the selected mata pelajaran from the intent
-        val matapelajaran = intent.getStringExtra("MAPELAJARAN")
-
-        // Filter the list based on the selected mata pelajaran
-        if (!matapelajaran.isNullOrEmpty()) {
-            daftarBabAdapter.filterByMatapelajaran(matapelajaran)
+        binding.btnBack.setOnClickListener {
+            finish()
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.example.suksesdidikan
 
 import Buku
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,16 +29,6 @@ class DaftarBabAdapter(
 
     override fun getItemCount(): Int {
         return filteredList.size
-    }
-
-    fun filterByMatapelajaran(matapelajaran: String) {
-        filteredList = babInfoList.filter { babInfo ->
-            bukuList.any { buku ->
-                buku.matapelajaran.equals(matapelajaran, ignoreCase = true)
-                        && babInfo.bab in buku.bab.map { it.bab }
-            }
-        }
-        notifyDataSetChanged()
     }
 
     inner class ParentViewHolder(private val binding: ItemMateribabBinding) :
