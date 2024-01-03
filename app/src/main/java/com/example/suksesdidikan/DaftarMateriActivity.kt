@@ -18,12 +18,15 @@ class DaftarMateriActivity: AppCompatActivity() {
         binding = ActivityDaftarmatapelajaranBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val userName = intent.getStringExtra("USER_NAME")
+        val userId = intent.getStringExtra("USER_ID")
         binding.bottomNavigation.selectedItemId = R.id.bottom_materi
         binding.bottomNavigation.setOnItemSelectedListener{ item ->
             when (item.itemId) {
                 R.id.bottom_home -> {
                     val intent = Intent(this@DaftarMateriActivity,MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
+                    intent.putExtra("USER_ID",userId)
+
                     startActivity(intent)
                     finish()
                     true
@@ -34,6 +37,8 @@ class DaftarMateriActivity: AppCompatActivity() {
                 R.id.bottom_result -> {
                     val intent = Intent(this@DaftarMateriActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
+                    intent.putExtra("USER_ID",userId)
+
                     startActivity(intent)
                     finish()
                     true
@@ -64,6 +69,8 @@ class DaftarMateriActivity: AppCompatActivity() {
                 intent.putExtra("BAB_DETAILS", babDetails as Serializable)
                 intent.putExtra("MAPELAJARAN", buku.matapelajaran)
                 intent.putExtra("USER_NAME", userName)
+                intent.putExtra("USER_ID",userId)
+
                 startActivity(intent)
             }
         })

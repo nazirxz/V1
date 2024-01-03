@@ -20,6 +20,7 @@ class KursusActivity : AppCompatActivity() {
         val avatar = intent.getIntExtra("AVATAR", 0)
         val matapelajaran = intent.getStringExtra("MAPELAJARAN")
         val deskripsi = intent.getStringExtra("DESKRIPSI")
+        val userId = intent.getStringExtra("USER_ID")
         val userName = intent.getStringExtra("USER_NAME")
 
         // Gunakan data yang diambil kembali untuk menampilkan informasi di layout activity_kursus
@@ -35,6 +36,8 @@ class KursusActivity : AppCompatActivity() {
                 R.id.bottom_home -> {
                     val intent = Intent(this@KursusActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
+                    intent.putExtra("USER_ID",userId)
+
                     startActivity(intent)
                     finish()
                     true
@@ -42,6 +45,8 @@ class KursusActivity : AppCompatActivity() {
                 R.id.bottom_materi -> {
                     val intent = Intent(this@KursusActivity, DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
+                    intent.putExtra("USER_ID",userId)
+
                     startActivity(intent)
                     finish()
                     true
@@ -49,6 +54,8 @@ class KursusActivity : AppCompatActivity() {
                 R.id.bottom_result -> {
                     val intent = Intent(this@KursusActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
+                    intent.putExtra("USER_ID",userId)
+
                     startActivity(intent)
                     finish()
                     true
@@ -70,6 +77,8 @@ class KursusActivity : AppCompatActivity() {
             val intent = Intent(this@KursusActivity, DaftarBabActivity::class.java)
             intent.putExtra("USER_NAME", userName)
             intent.putExtra("MAPELAJARAN", matapelajaran)
+            intent.putExtra("USER_ID",userId)
+
             // Add more data if needed
             startActivity(intent)
         }

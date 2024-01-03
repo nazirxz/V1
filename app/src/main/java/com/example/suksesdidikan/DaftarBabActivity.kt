@@ -17,6 +17,7 @@ class DaftarBabActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val userName = intent.getStringExtra("USER_NAME")
+        val userId = intent.getStringExtra("USER_ID")
         val matapelajaran = intent.getStringExtra("MAPELAJARAN") ?: ""
 
         // Get the filtered list of BabInfo based on the selected mata pelajaran
@@ -33,6 +34,7 @@ class DaftarBabActivity : AppCompatActivity() {
                 R.id.bottom_home -> {
                     val intent = Intent(this@DaftarBabActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
+                    intent.putExtra("USER_ID",userId)
                     startActivity(intent)
                     finish()
                     true
@@ -40,6 +42,8 @@ class DaftarBabActivity : AppCompatActivity() {
                 R.id.bottom_materi ->{
                     val intent = Intent(this@DaftarBabActivity, DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
+                    intent.putExtra("USER_ID",userId)
+
                     startActivity(intent)
                     finish()
                     true
@@ -47,6 +51,8 @@ class DaftarBabActivity : AppCompatActivity() {
                 R.id.bottom_result -> {
                     val intent = Intent(this@DaftarBabActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
+                    intent.putExtra("USER_ID",userId)
+
                     startActivity(intent)
                     finish()
                     true
@@ -60,6 +66,7 @@ class DaftarBabActivity : AppCompatActivity() {
             intent.putExtra("NAMA_BAB", babDetail.judul)
             intent.putExtra("BAB", babInfo.bab)
             intent.putExtra("USER_NAME", userName)
+            intent.putExtra("USER_ID",userId)
             startActivity(intent)
         }
         binding.btnBack.setOnClickListener {

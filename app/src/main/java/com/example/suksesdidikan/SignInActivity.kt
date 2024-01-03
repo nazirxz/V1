@@ -49,12 +49,15 @@ class SignInActivity : AppCompatActivity() {
 
     private fun checkUserLogin(email: String, password: String) {
         val userRef = database.child("users")
+
         userRef.orderByChild("email").equalTo(email)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     if (dataSnapshot.exists()) {
                         for (userSnapshot in dataSnapshot.children) {
                             val user = userSnapshot.getValue(User::class.java)
+
+                            val userId = userSnapshot.key // Mendapatkan userId dari snapshot
 
                             val userName = user?.fullName ?: "User"
 
@@ -63,7 +66,7 @@ class SignInActivity : AppCompatActivity() {
                                 Toast.makeText(this@SignInActivity, "Login berhasil!", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this@SignInActivity, MainActivity::class.java)
                                 intent.putExtra("USER_NAME", userName)
-                                intent.putExtra("USER_ID", userSnapshot.key) // Mengirim userId sebagai extra
+                                intent.putExtra("USER_ID", userId) // Mengirim userId sebagai extra
                                 startActivity(intent)
                                 finish()
                                 return
@@ -79,4 +82,5 @@ class SignInActivity : AppCompatActivity() {
                 }
             })
     }
+
 }

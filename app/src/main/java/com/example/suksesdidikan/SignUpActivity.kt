@@ -49,7 +49,8 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun saveUserToDatabase(fullName: String, phone: String, email: String, password: String) {
         val userId = database.child("users").push().key
-        val user = User(fullName, phone, email, password)
+        val user = User(fullName, phone, email, password, 0,userId ?: "")
+
 
         if (userId != null) {
             database.child("users").child(userId).setValue(user)
