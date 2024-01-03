@@ -116,15 +116,14 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val userId = intent.getStringExtra("USER_ID")
-            updateUserLastActiveTimestamp(userId!!)
+        updateUserLastActiveTimestamp(userId!!)
 
     }
 
     override fun onPause() {
         super.onPause()
         val userId = intent.getStringExtra("USER_ID")
-
-            updateUserLastActiveTimestamp(userId!!)
+        updateUserLastActiveTimestamp(userId!!)
 
     }
 
