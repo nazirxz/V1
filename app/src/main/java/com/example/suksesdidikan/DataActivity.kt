@@ -34,7 +34,7 @@ class DataActivity:AppCompatActivity() {
         }
         // Simpan perubahan saat tombol Save ditekan
         binding.btnSignUp.setOnClickListener {
-            val usia = binding.tvAge.text.toString().toIntOrNull()
+            val usia = binding.tvAge.text.toString()
             val kelas= binding.spinnerKelas.selectedItem // Dapatkan indeks pilihan Spinner
 
             if (usia != null && kelas != null) { // Pastikan usia terisi dan kelas dipilih

@@ -60,12 +60,16 @@ class SignInActivity : AppCompatActivity() {
                             val userId = userSnapshot.key // Mendapatkan userId dari snapshot
 
                             val userName = user?.fullName ?: "User"
+                            val kelas = user?.kelas?: "User"
+                            val usia = user?.usia?: "User"
 
                             if (user != null && user.password == password) {
                                 // Login berhasil
                                 Toast.makeText(this@SignInActivity, "Login berhasil!", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this@SignInActivity, MainActivity::class.java)
                                 intent.putExtra("USER_NAME", userName)
+                                intent.putExtra("USER_USIA",usia)
+                                intent.putExtra("USER_KELAS",kelas)
                                 intent.putExtra("USER_ID", userId) // Mengirim userId sebagai extra
                                 startActivity(intent)
                                 finish()

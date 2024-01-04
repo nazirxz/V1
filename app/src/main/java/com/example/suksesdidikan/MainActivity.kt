@@ -27,8 +27,9 @@ class MainActivity : AppCompatActivity() {
         sessionStartTime = SystemClock.uptimeMillis()
 
         val userName = intent.getStringExtra("USER_NAME")
-        Log.d("Firebase", "User Name: $userName")
         val userId = intent.getStringExtra("USER_ID")
+        val kelas = intent.getStringExtra("USER_KELAS") ?: "" // Ubah sesuai tipe data yang diharapkan
+        val usia = intent.getStringExtra("USER_USIA") ?: "" // Ubah sesuai tipe data yang diharapkan
 
         val welcomeText = "Hello $userName"
         binding.tvWelcome.text = welcomeText
@@ -63,6 +64,8 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -71,6 +74,8 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -92,6 +97,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, KursusActivity::class.java)
             intent.putExtra("USER_NAME", userName)
             intent.putExtra("USER_ID",userId)
+            intent.putExtra("USER_KELAS",kelas)
+            intent.putExtra("USER_USIA",usia)
             intent.putRekomenExtra(selectedItem)
             startActivity(intent)
         }
@@ -132,7 +139,8 @@ class MainActivity : AppCompatActivity() {
         val sessionEndTime = SystemClock.uptimeMillis()
         val sessionDuration = sessionEndTime - sessionStartTime // Menghitung durasi sesi
         val userName = intent.getStringExtra("USER_NAME")
-
+        val kelas = intent.getStringExtra("USER_KELAS") ?: "" // Ubah sesuai tipe data yang diharapkan
+        val usia = intent.getStringExtra("USER_USIA") ?: "" // Ubah sesuai tipe data yang diharapkan
         Log.d("Firebase", "Session Duration in Millis: $sessionDuration") // Tambahkan log untuk durasi sesi
 
         val aktivitasRef = database.child("aktivitas").child(userId)
@@ -149,7 +157,13 @@ class MainActivity : AppCompatActivity() {
 
                         val updateMap = HashMap<String, Any>()
                         updateMap["lastActiveDuration"] = updatedDuration
+                        Log.d("Data","Durasi $updatedDuration.toString()")
                         updateMap["userName"] = userName!!
+                        Log.d("Data", "Username $userName")
+                        updateMap["kelas"] = kelas!!// Tambahkan kelas
+                        Log.d("Data", "Kelas $kelas")
+                        updateMap["usia"] = usia!! // Tambahkan usia
+                        Log.d("Data", "Usia $usia")
                         aktivitasRef.updateChildren(updateMap)
                             .addOnSuccessListener {
                                 Log.d("Firebase", "Updated lastActiveDuration for user $userId")
@@ -162,7 +176,17 @@ class MainActivity : AppCompatActivity() {
                     // Jika entri tidak ada, buat entri baru
                     val sessionData = HashMap<String, Any>()
                     sessionData["lastActiveDuration"] = sessionDuration // Menyimpan durasi sesi
+                    Log.d("Data", "Durasi $sessionDuration")
+
                     sessionData["userName"] = userName!!
+                    Log.d("Data", "Username $userName")
+
+                    sessionData["kelas"] = kelas!! // Tambahkan kelas
+                    Log.d("Data", "Kelas $kelas")
+
+                    sessionData["usia"] = usia!! // Tambahkan usia
+                    Log.d("Data", "Usia $usia")
+
                     database.child("aktivitas").child(userId).setValue(sessionData)
                         .addOnSuccessListener {
                             Log.d("Firebase", "Created new entry for lastActiveDuration for user $userId")

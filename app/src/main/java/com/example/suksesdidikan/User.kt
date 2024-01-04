@@ -4,7 +4,7 @@ data class User(
     val phone: String = "",
     val email: String = "",
     val password: String = "",
-    val usia: Int = 0,
+    val usia: String="",
     val kelas: String = "",
     val userId: String= ""// Menyimpan timestamp terakhir aktivitas pengguna
 )

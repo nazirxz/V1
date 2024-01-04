@@ -49,15 +49,18 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun saveUserToDatabase(fullName: String, phone: String, email: String, password: String) {
         val userId = database.child("users").push().key
-        val user = User(fullName, phone, email, password, 0,"",userId ?: "")
+        val user = User(fullName, phone, email, password, "","",userId ?: "")
 
         if (userId != null) {
             database.child("users").child(userId).setValue(user)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         val userName = user?.fullName
+                        val usia = user?.usia
+                        val kelas = user?.kelas
                         val intent = Intent(this, DataActivity::class.java)
                         intent.putExtra("USER_NAME",userName)
+
                         intent.putExtra("USER_ID", userId) // Mengirim userId sebagai extra
                         startActivity(intent)
                         finish()
