@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SuksesDidikan</string>
+        <string-array name="kelas_array">
+            <item>Kelas VII</item>
+            <item>Kelas VIII</item>
+            <item>Kelas IX</item>
+        </string-array>
+
 </resources>

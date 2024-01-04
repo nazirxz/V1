@@ -32,6 +32,7 @@
         <activity android:name=".ResultActivity" android:exported="false"/>
         <activity android:name=".BelajarMateriActivity" android:exported="false"/>
         <activity android:name=".DaftarBabActivity" android:exported="false"/>
+        <activity android:name=".DataActivity" android:exported="false"/>
     </application>
 
 </manifest>

@@ -49,15 +49,15 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun saveUserToDatabase(fullName: String, phone: String, email: String, password: String) {
         val userId = database.child("users").push().key
-        val user = User(fullName, phone, email, password, 0,userId ?: "")
-
+        val user = User(fullName, phone, email, password, 0,"",userId ?: "")
 
         if (userId != null) {
             database.child("users").child(userId).setValue(user)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this, "Registrasi berhasil!", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, MainActivity::class.java)
+                        val userName = user?.fullName
+                        val intent = Intent(this, DataActivity::class.java)
+                        intent.putExtra("USER_NAME",userName)
                         intent.putExtra("USER_ID", userId) // Mengirim userId sebagai extra
                         startActivity(intent)
                         finish()
