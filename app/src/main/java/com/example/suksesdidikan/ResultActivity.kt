@@ -12,17 +12,26 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
+    private lateinit var databaseReference: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val userName = intent.getStringExtra("USER_NAME")
         val userId = intent.getStringExtra("USER_ID")
-        pieChartData()
-        columnChartData()
+        val kelas = intent.getStringExtra("USER_KELAS")
+        val usia = intent.getStringExtra("USER_USIA")
+        // Inisialisasi Firebase Database Reference
+        databaseReference = FirebaseDatabase.getInstance().reference.child("performasiswa")
         binding.bottomNavigation.selectedItemId = R.id.bottom_result
         binding.bottomNavigation.setOnItemSelectedListener{ item ->
             when (item.itemId) {
@@ -30,7 +39,8 @@ class ResultActivity : AppCompatActivity() {
                     val intent = Intent(this@ResultActivity,MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -39,7 +49,8 @@ class ResultActivity : AppCompatActivity() {
                     val intent = Intent(this@ResultActivity,DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -51,6 +62,63 @@ class ResultActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        // Ambil data dari Firebase
+        getDataFromFirebase()
+    }
+
+    private fun getDataFromFirebase() {
+        databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    val rajinCount = snapshot.child("Rajin").value.toString().toFloat()
+                    val biasaCount = snapshot.child("Biasa").value.toString().toFloat()
+                    val malasCount = snapshot.child("Malas").value.toString().toFloat()
+
+                    // Buat Pie Chart
+                    val pieEntries = listOf(
+                        PieEntry(rajinCount, "Rajin"),
+                        PieEntry(biasaCount, "Biasa"),
+                        PieEntry(malasCount, "Malas")
+                    )
+                    createPieChart(pieEntries)
+
+                    // Buat Bar Chart
+                    val barEntries = listOf(
+                        BarEntry(0f, rajinCount),
+                        BarEntry(1f, biasaCount),
+                        BarEntry(2f, malasCount)
+                    )
+                    createBarChart(barEntries)
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                // Error handling
+            }
+        })
+    }
+
+    private fun createPieChart(entries: List<PieEntry>) {
+        val dataSet = PieDataSet(entries, "Peforma siswa")
+        dataSet.colors = mutableListOf(Color.RED, Color.GREEN, Color.BLUE)
+        dataSet.valueTextSize = 12f
+
+        val pieData = PieData(dataSet)
+        val pieChart = binding.pieChart
+        pieChart.data = pieData
+        pieChart.invalidate()
+    }
+
+    private fun createBarChart(entries: List<BarEntry>) {
+        val dataSet = BarDataSet(entries, "Peforma siswa")
+        dataSet.colors = mutableListOf(Color.RED, Color.GREEN, Color.BLUE)
+        dataSet.valueTextSize = 12f
+
+        val barData = BarData(dataSet)
+        val barChart = binding.barChart
+        barChart.data = barData
+        barChart.setFitBars(true)
+        barChart.invalidate()
     }
     override fun onBackPressed() {
         AlertDialog.Builder(this@ResultActivity, R.style.AlertDialogTheme)
@@ -63,40 +131,5 @@ class ResultActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .show()
-    }
-    private fun pieChartData() {
-        val entries = listOf(
-            PieEntry(98f, "Fatur"),  // Data Fatur dengan nilai 98
-            PieEntry(100f, "Wahyu"), // Data Wahyu dengan nilai 100
-            PieEntry(78f, "Ahmad")   // Data Ahmad dengan nilai 78
-        )
-
-        val dataSet = PieDataSet(entries, "Mahasiswa Berprestasi")
-        dataSet.colors = mutableListOf(Color.RED, Color.GREEN, Color.BLUE) // Warna untuk setiap bagian
-        dataSet.valueTextSize = 12f // Ukuran teks nilai
-
-        val pieData = PieData(dataSet)
-
-        val pieChart = binding.pieChart
-        pieChart.data = pieData
-        pieChart.invalidate()
-    }
-    private fun columnChartData() {
-        val entries = listOf(
-            BarEntry(0f, 98f),   // Data Fatur dengan nilai 98
-            BarEntry(1f, 100f),  // Data Wahyu dengan nilai 100
-            BarEntry(2f, 78f)    // Data Ahmad dengan nilai 78
-        )
-
-        val dataSet = BarDataSet(entries, "Mahasiswa Berprestasi")
-        dataSet.colors = mutableListOf(Color.RED, Color.GREEN, Color.BLUE) // Warna untuk setiap bar
-        dataSet.valueTextSize = 12f // Ukuran teks nilai
-
-        val barData = BarData(dataSet)
-
-        val barChart = binding.barChart
-        barChart.data = barData
-        barChart.setFitBars(true)
-        barChart.invalidate()
     }
 }

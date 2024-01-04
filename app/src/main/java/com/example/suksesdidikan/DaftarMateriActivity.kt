@@ -19,6 +19,8 @@ class DaftarMateriActivity: AppCompatActivity() {
         setContentView(binding.root)
         val userName = intent.getStringExtra("USER_NAME")
         val userId = intent.getStringExtra("USER_ID")
+        val kelas = intent.getStringExtra("USER_KELAS")
+        val usia = intent.getStringExtra("USER_USIA")
         binding.bottomNavigation.selectedItemId = R.id.bottom_materi
         binding.bottomNavigation.setOnItemSelectedListener{ item ->
             when (item.itemId) {
@@ -26,7 +28,8 @@ class DaftarMateriActivity: AppCompatActivity() {
                     val intent = Intent(this@DaftarMateriActivity,MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -38,7 +41,8 @@ class DaftarMateriActivity: AppCompatActivity() {
                     val intent = Intent(this@DaftarMateriActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -70,7 +74,8 @@ class DaftarMateriActivity: AppCompatActivity() {
                 intent.putExtra("MAPELAJARAN", buku.matapelajaran)
                 intent.putExtra("USER_NAME", userName)
                 intent.putExtra("USER_ID",userId)
-
+                intent.putExtra("USER_KELAS",kelas)
+                intent.putExtra("USER_USIA",usia)
                 startActivity(intent)
             }
         })

@@ -17,6 +17,8 @@ class BelajarMateriActivity:AppCompatActivity() {
         val namaBab = intent.getStringExtra("NAMA_BAB")
         val bab = intent.getStringExtra("BAB")
         val userName = intent.getStringExtra("USER_NAME")
+        val kelas = intent.getStringExtra("USER_KELAS")
+        val usia = intent.getStringExtra("USER_USIA")
 
         binding.bab.text = bab
         binding.judulBab.text = namaBab
@@ -28,6 +30,8 @@ class BelajarMateriActivity:AppCompatActivity() {
                     val intent = Intent(this@BelajarMateriActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -36,6 +40,8 @@ class BelajarMateriActivity:AppCompatActivity() {
                     val intent = Intent(this@BelajarMateriActivity, DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
 
                     startActivity(intent)
                     finish()
@@ -45,7 +51,8 @@ class BelajarMateriActivity:AppCompatActivity() {
                     val intent = Intent(this@BelajarMateriActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true

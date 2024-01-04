@@ -22,7 +22,8 @@ class KursusActivity : AppCompatActivity() {
         val deskripsi = intent.getStringExtra("DESKRIPSI")
         val userId = intent.getStringExtra("USER_ID")
         val userName = intent.getStringExtra("USER_NAME")
-
+        val kelas = intent.getStringExtra("USER_KELAS")
+        val usia = intent.getStringExtra("USER_USIA")
         // Gunakan data yang diambil kembali untuk menampilkan informasi di layout activity_kursus
         binding.tvMatapelajaran.text = matapelajaran
         binding.tvDescription.text = deskripsi
@@ -37,7 +38,8 @@ class KursusActivity : AppCompatActivity() {
                     val intent = Intent(this@KursusActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -46,7 +48,8 @@ class KursusActivity : AppCompatActivity() {
                     val intent = Intent(this@KursusActivity, DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -55,7 +58,8 @@ class KursusActivity : AppCompatActivity() {
                     val intent = Intent(this@KursusActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -78,7 +82,8 @@ class KursusActivity : AppCompatActivity() {
             intent.putExtra("USER_NAME", userName)
             intent.putExtra("MAPELAJARAN", matapelajaran)
             intent.putExtra("USER_ID",userId)
-
+            intent.putExtra("USER_KELAS",kelas)
+            intent.putExtra("USER_USIA",usia)
             // Add more data if needed
             startActivity(intent)
         }

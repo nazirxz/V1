@@ -19,7 +19,8 @@ class DaftarBabActivity : AppCompatActivity() {
         val userName = intent.getStringExtra("USER_NAME")
         val userId = intent.getStringExtra("USER_ID")
         val matapelajaran = intent.getStringExtra("MAPELAJARAN") ?: ""
-
+        val kelas = intent.getStringExtra("USER_KELAS")
+        val usia = intent.getStringExtra("USER_USIA")
         // Get the filtered list of BabInfo based on the selected mata pelajaran
         val filteredBabInfoList = DummyData.getAllBabInfoFromBooks(matapelajaran)
 
@@ -35,6 +36,8 @@ class DaftarBabActivity : AppCompatActivity() {
                     val intent = Intent(this@DaftarBabActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -43,6 +46,8 @@ class DaftarBabActivity : AppCompatActivity() {
                     val intent = Intent(this@DaftarBabActivity, DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
 
                     startActivity(intent)
                     finish()
@@ -52,7 +57,8 @@ class DaftarBabActivity : AppCompatActivity() {
                     val intent = Intent(this@DaftarBabActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
-
+                    intent.putExtra("USER_KELAS",kelas)
+                    intent.putExtra("USER_USIA",usia)
                     startActivity(intent)
                     finish()
                     true
@@ -67,6 +73,8 @@ class DaftarBabActivity : AppCompatActivity() {
             intent.putExtra("BAB", babInfo.bab)
             intent.putExtra("USER_NAME", userName)
             intent.putExtra("USER_ID",userId)
+            intent.putExtra("USER_KELAS",kelas)
+            intent.putExtra("USER_USIA",usia)
             startActivity(intent)
         }
         binding.btnBack.setOnClickListener {

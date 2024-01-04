@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         val userName = intent.getStringExtra("USER_NAME")
         val userId = intent.getStringExtra("USER_ID")
-        val kelas = intent.getStringExtra("USER_KELAS") ?: "" // Ubah sesuai tipe data yang diharapkan
-        val usia = intent.getStringExtra("USER_USIA") ?: "" // Ubah sesuai tipe data yang diharapkan
+        val kelas = intent.getStringExtra("USER_KELAS")
+        val usia = intent.getStringExtra("USER_USIA")
 
         val welcomeText = "Hello $userName"
         binding.tvWelcome.text = welcomeText
