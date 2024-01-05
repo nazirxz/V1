@@ -1,12 +1,15 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.view
 
-import Buku
+import com.example.suksesdidikan.model.Buku
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.suksesdidikan.DummyData.dummyList
+import com.example.suksesdidikan.utils.DummyData.dummyList
+import com.example.suksesdidikan.R
+import com.example.suksesdidikan.adapter.BabAdapter
 import com.example.suksesdidikan.databinding.ActivityKursusBinding
+import com.example.suksesdidikan.model.BabInfo
 
 class KursusActivity : AppCompatActivity() {
     private lateinit var binding: ActivityKursusBinding

@@ -1,13 +1,16 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.view
 
-import Buku
+import com.example.suksesdidikan.model.Buku
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.suksesdidikan.DummyData.dummyList
+import com.example.suksesdidikan.utils.DummyData.dummyList
+import com.example.suksesdidikan.R
+import com.example.suksesdidikan.adapter.DaftarMatpelAdapter
 import com.example.suksesdidikan.databinding.ActivityDaftarmatapelajaranBinding
+import com.example.suksesdidikan.model.BabDetail
 import java.io.Serializable
 
 class DaftarMateriActivity: AppCompatActivity() {
@@ -25,7 +28,7 @@ class DaftarMateriActivity: AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener{ item ->
             when (item.itemId) {
                 R.id.bottom_home -> {
-                    val intent = Intent(this@DaftarMateriActivity,MainActivity::class.java)
+                    val intent = Intent(this@DaftarMateriActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
                     intent.putExtra("USER_KELAS",kelas)

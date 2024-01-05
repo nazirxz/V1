@@ -1,4 +1,4 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,7 +15,7 @@ class OnboardingActivity: AppCompatActivity() {
             startActivity(Intent(this, SignInActivity::class.java))
         }
         binding.daftar.setOnClickListener {
-            startActivity(Intent(this,SignUpActivity::class.java))
+            startActivity(Intent(this, SignUpActivity::class.java))
         }
     }
 }

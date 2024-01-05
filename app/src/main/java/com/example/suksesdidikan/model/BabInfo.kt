@@ -1,4 +1,4 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.model
 
 import java.io.Serializable
 

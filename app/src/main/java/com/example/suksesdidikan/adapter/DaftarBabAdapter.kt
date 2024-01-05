@@ -1,14 +1,13 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.adapter
 
-import Buku
-import android.content.Intent
-import android.util.Log
+import com.example.suksesdidikan.model.Buku
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.suksesdidikan.DummyData.dummyList
 import com.example.suksesdidikan.databinding.ItemMateribabBinding
+import com.example.suksesdidikan.model.BabDetail
+import com.example.suksesdidikan.model.BabInfo
 
 class DaftarBabAdapter(
     private var babInfoList: List<BabInfo>,

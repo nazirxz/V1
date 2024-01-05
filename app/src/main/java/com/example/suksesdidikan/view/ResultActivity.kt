@@ -1,10 +1,11 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.view
 
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.suksesdidikan.R
 import com.example.suksesdidikan.databinding.ActivityResultBinding
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
@@ -36,7 +37,7 @@ class ResultActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener{ item ->
             when (item.itemId) {
                 R.id.bottom_home -> {
-                    val intent = Intent(this@ResultActivity,MainActivity::class.java)
+                    val intent = Intent(this@ResultActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
                     intent.putExtra("USER_KELAS",kelas)
@@ -46,7 +47,7 @@ class ResultActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bottom_materi -> {
-                    val intent = Intent(this@ResultActivity,DaftarMateriActivity::class.java)
+                    val intent = Intent(this@ResultActivity, DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
                     intent.putExtra("USER_ID",userId)
                     intent.putExtra("USER_KELAS",kelas)

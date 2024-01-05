@@ -1,10 +1,10 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.suksesdidikan.databinding.ItemBabBinding
+import com.example.suksesdidikan.model.BabInfo
 
 class BabAdapter(private val babInfoList: List<BabInfo>) :
     RecyclerView.Adapter<BabAdapter.BabInfoViewHolder>() {

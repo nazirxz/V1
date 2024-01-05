@@ -1,10 +1,13 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.suksesdidikan.DummyData.dummyList
+import com.example.suksesdidikan.utils.DummyData
+import com.example.suksesdidikan.utils.DummyData.dummyList
+import com.example.suksesdidikan.R
+import com.example.suksesdidikan.adapter.DaftarBabAdapter
 import com.example.suksesdidikan.databinding.ActivityDaftarbabBinding
 
 class DaftarBabActivity : AppCompatActivity() {
@@ -24,8 +27,8 @@ class DaftarBabActivity : AppCompatActivity() {
         // Get the filtered list of BabInfo based on the selected mata pelajaran
         val filteredBabInfoList = DummyData.getAllBabInfoFromBooks(matapelajaran)
 
-        // Set adapter with the filtered list of BabInfo and the full list of Buku
-        daftarBabAdapter = DaftarBabAdapter(filteredBabInfoList, DummyData.dummyList)
+        // Set adapter with the filtered list of BabInfo and the full list of com.example.suksesdidikan.model.Buku
+        daftarBabAdapter = DaftarBabAdapter(filteredBabInfoList, dummyList)
         binding.rvBab.adapter = daftarBabAdapter
         binding.rvBab.layoutManager = LinearLayoutManager(this)
 

@@ -1,6 +1,9 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.utils
 
-import Buku
+import com.example.suksesdidikan.R
+import com.example.suksesdidikan.model.BabDetail
+import com.example.suksesdidikan.model.BabInfo
+import com.example.suksesdidikan.model.Buku
 
 object DummyData {
    val dummyList: List<Buku> = listOf(
@@ -617,11 +620,11 @@ object DummyData {
        ),
         // ... dan seterusnya untuk buku-buku lainnya
     )
-    // Mendapatkan semua BabInfo dari semua Buku
+    // Mendapatkan semua BabInfo dari semua com.example.suksesdidikan.model.Buku
     fun getAllBabInfoFromBooks(matapelajaran: String): List<BabInfo> {
         val allBabInfos = mutableListOf<BabInfo>()
 
-        // Iterate melalui setiap Buku dan tambahkan semua BabInfo yang sesuai ke dalam list
+        // Iterate melalui setiap com.example.suksesdidikan.model.Buku dan tambahkan semua BabInfo yang sesuai ke dalam list
         dummyList.forEach { buku ->
             if (buku.matapelajaran.equals(matapelajaran, ignoreCase = true)) {
                 allBabInfos.addAll(buku.bab)

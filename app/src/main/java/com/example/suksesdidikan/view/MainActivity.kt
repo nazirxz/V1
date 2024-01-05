@@ -1,13 +1,15 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.view
 
-import Buku
+import com.example.suksesdidikan.model.Buku
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.suksesdidikan.DummyData.dummyList
+import com.example.suksesdidikan.utils.DummyData.dummyList
+import com.example.suksesdidikan.R
+import com.example.suksesdidikan.adapter.BukuAdapter
 import com.example.suksesdidikan.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot

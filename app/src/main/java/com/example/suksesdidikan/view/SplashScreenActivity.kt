@@ -1,10 +1,9 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.suksesdidikan.databinding.ActivitySplashscreenBinding
 

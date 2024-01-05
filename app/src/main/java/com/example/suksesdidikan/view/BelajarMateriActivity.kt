@@ -1,8 +1,9 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.suksesdidikan.R
 import com.example.suksesdidikan.databinding.ActivityBelajarBinding
 
 class BelajarMateriActivity:AppCompatActivity() {

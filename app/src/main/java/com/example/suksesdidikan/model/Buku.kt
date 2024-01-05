@@ -1,4 +1,5 @@
-import com.example.suksesdidikan.BabInfo
+package com.example.suksesdidikan.model
+
 import java.io.Serializable
 
 data class Buku(

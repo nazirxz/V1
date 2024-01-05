@@ -1,9 +1,10 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.suksesdidikan.databinding.ItemSubbabBinding
+import com.example.suksesdidikan.model.BabDetail
 
 class SubBabAdapter(private val list: List<BabDetail>) :
     RecyclerView.Adapter<SubBabAdapter.ChildViewHolder>() {

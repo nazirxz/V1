@@ -1,6 +1,6 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.adapter
 
-import Buku
+import com.example.suksesdidikan.model.Buku
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.example.suksesdidikan
+package com.example.suksesdidikan.model
 data class User(
     val fullName: String = "",
     val phone: String = "",
