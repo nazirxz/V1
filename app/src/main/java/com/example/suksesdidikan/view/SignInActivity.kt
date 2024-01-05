@@ -23,22 +23,27 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Inisialisasi DatabaseReference
         database = FirebaseDatabase.getInstance().reference
 
+        // Tombol kembali ke OnboardingActivity
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, OnboardingActivity::class.java))
             finish()
         }
 
+        // Pergi ke SignUpActivity
         binding.signUp.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
             finish()
         }
 
+        // Tombol Sign In
         binding.btnSignIn.setOnClickListener {
             val email = binding.tvEmail.text.toString().trim()
             val password = binding.tvPwd.text.toString().trim()
 
+            // Memastikan email dan password terisi
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                 Toast.makeText(this, "Email dan password harus diisi!", Toast.LENGTH_SHORT).show()
             } else {
@@ -48,6 +53,7 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
+    // Fungsi untuk memeriksa login pengguna di Firebase
     private fun checkUserLogin(email: String, password: String) {
         val userRef = database.child("users")
 
@@ -58,7 +64,8 @@ class SignInActivity : AppCompatActivity() {
                         for (userSnapshot in dataSnapshot.children) {
                             val user = userSnapshot.getValue(User::class.java)
 
-                            val userId = userSnapshot.key // Mendapatkan userId dari snapshot
+                            // Mendapatkan userId dari snapshot
+                            val userId = userSnapshot.key
 
                             val userName = user?.fullName ?: "User"
                             val kelas = user?.kelas?: "User"
@@ -67,11 +74,15 @@ class SignInActivity : AppCompatActivity() {
                             if (user != null && user.password == password) {
                                 // Login berhasil
                                 Toast.makeText(this@SignInActivity, "Login berhasil!", Toast.LENGTH_SHORT).show()
+
+                                // Menyiapkan intent dengan informasi pengguna
                                 val intent = Intent(this@SignInActivity, MainActivity::class.java)
                                 intent.putExtra("USER_NAME", userName)
                                 intent.putExtra("USER_USIA",usia)
                                 intent.putExtra("USER_KELAS",kelas)
                                 intent.putExtra("USER_ID", userId) // Mengirim userId sebagai extra
+
+                                // Beralih ke MainActivity
                                 startActivity(intent)
                                 finish()
                                 return
@@ -87,5 +98,4 @@ class SignInActivity : AppCompatActivity() {
                 }
             })
     }
-
 }

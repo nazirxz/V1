@@ -111,6 +111,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvRekomen.adapter = adapter
 
     }
+    //filter data buku sesuai kelas
     private fun filterByKelas(kelas: String) {
         val filteredList = dummyList.filter { it.kelas == kelas }
         (binding.rvRekomen.adapter as? BukuAdapter)?.updateList(filteredList)
@@ -122,6 +123,8 @@ class MainActivity : AppCompatActivity() {
             putExtra("DESKRIPSI", deskripsi)
         }
     }
+
+    //Fungsi jika aplikasi dibuka kembali
     override fun onResume() {
         super.onResume()
         val userId = intent.getStringExtra("USER_ID")
@@ -129,6 +132,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Fungsi jika aplikasi membuka app luar
     override fun onPause() {
         super.onPause()
         val userId = intent.getStringExtra("USER_ID")
@@ -136,21 +140,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //fungsi untuk menyimpan durasi user membuka aplikasi
     private fun updateUserLastActiveTimestamp(userId: String) {
         val database = FirebaseDatabase.getInstance().reference
         val sessionEndTime = SystemClock.uptimeMillis()
-        val sessionDuration = sessionEndTime - sessionStartTime // Menghitung durasi sesi
+        val sessionDuration = sessionEndTime - sessionStartTime
         val userName = intent.getStringExtra("USER_NAME")
-        val kelas = intent.getStringExtra("USER_KELAS") ?: "" // Ubah sesuai tipe data yang diharapkan
-        val usia = intent.getStringExtra("USER_USIA") ?: "" // Ubah sesuai tipe data yang diharapkan
-        Log.d("Firebase", "Session Duration in Millis: $sessionDuration") // Tambahkan log untuk durasi sesi
+        val kelas = intent.getStringExtra("USER_KELAS") ?: ""
+        val usia = intent.getStringExtra("USER_USIA") ?: ""
 
         val aktivitasRef = database.child("aktivitas").child(userId)
 
         aktivitasRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    // Jika entri ada, perbarui data yang ada
                     val existingData = dataSnapshot.value as? Map<String, Any>
 
                     existingData?.let {
@@ -159,13 +162,9 @@ class MainActivity : AppCompatActivity() {
 
                         val updateMap = HashMap<String, Any>()
                         updateMap["lastActiveDuration"] = updatedDuration
-                        Log.d("Data","Durasi $updatedDuration.toString()")
                         updateMap["userName"] = userName!!
-                        Log.d("Data", "Username $userName")
-                        updateMap["kelas"] = kelas!!// Tambahkan kelas
-                        Log.d("Data", "Kelas $kelas")
-                        updateMap["usia"] = usia!! // Tambahkan usia
-                        Log.d("Data", "Usia $usia")
+                        updateMap["kelas"] = kelas!!
+                        updateMap["usia"] = usia!!
                         aktivitasRef.updateChildren(updateMap)
                             .addOnSuccessListener {
                                 Log.d("Firebase", "Updated lastActiveDuration for user $userId")
@@ -175,19 +174,11 @@ class MainActivity : AppCompatActivity() {
                             }
                     }
                 } else {
-                    // Jika entri tidak ada, buat entri baru
                     val sessionData = HashMap<String, Any>()
-                    sessionData["lastActiveDuration"] = sessionDuration // Menyimpan durasi sesi
-                    Log.d("Data", "Durasi $sessionDuration")
-
+                    sessionData["lastActiveDuration"] = sessionDuration
                     sessionData["userName"] = userName!!
-                    Log.d("Data", "Username $userName")
-
-                    sessionData["kelas"] = kelas!! // Tambahkan kelas
-                    Log.d("Data", "Kelas $kelas")
-
-                    sessionData["usia"] = usia!! // Tambahkan usia
-                    Log.d("Data", "Usia $usia")
+                    sessionData["kelas"] = kelas!!
+                    sessionData["usia"] = usia!!
 
                     database.child("aktivitas").child(userId).setValue(sessionData)
                         .addOnSuccessListener {

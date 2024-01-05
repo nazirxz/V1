@@ -27,7 +27,8 @@ class KursusActivity : AppCompatActivity() {
         val userName = intent.getStringExtra("USER_NAME")
         val kelas = intent.getStringExtra("USER_KELAS")
         val usia = intent.getStringExtra("USER_USIA")
-        // Gunakan data yang diambil kembali untuk menampilkan informasi di layout activity_kursus
+
+        // Tampilkan data dalam layout activity_kursus
         binding.tvMatapelajaran.text = matapelajaran
         binding.tvDescription.text = deskripsi
         binding.avatar.setImageResource(avatar)
@@ -38,31 +39,34 @@ class KursusActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_home -> {
+                    // Intent ke MainActivity
                     val intent = Intent(this@KursusActivity, MainActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
-                    intent.putExtra("USER_ID",userId)
-                    intent.putExtra("USER_KELAS",kelas)
-                    intent.putExtra("USER_USIA",usia)
+                    intent.putExtra("USER_ID", userId)
+                    intent.putExtra("USER_KELAS", kelas)
+                    intent.putExtra("USER_USIA", usia)
                     startActivity(intent)
                     finish()
                     true
                 }
                 R.id.bottom_materi -> {
+                    // Intent ke DaftarMateriActivity
                     val intent = Intent(this@KursusActivity, DaftarMateriActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
-                    intent.putExtra("USER_ID",userId)
-                    intent.putExtra("USER_KELAS",kelas)
-                    intent.putExtra("USER_USIA",usia)
+                    intent.putExtra("USER_ID", userId)
+                    intent.putExtra("USER_KELAS", kelas)
+                    intent.putExtra("USER_USIA", usia)
                     startActivity(intent)
                     finish()
                     true
                 }
                 R.id.bottom_result -> {
+                    // Intent ke ResultActivity
                     val intent = Intent(this@KursusActivity, ResultActivity::class.java)
                     intent.putExtra("USER_NAME", userName)
-                    intent.putExtra("USER_ID",userId)
-                    intent.putExtra("USER_KELAS",kelas)
-                    intent.putExtra("USER_USIA",usia)
+                    intent.putExtra("USER_ID", userId)
+                    intent.putExtra("USER_KELAS", kelas)
+                    intent.putExtra("USER_USIA", usia)
                     startActivity(intent)
                     finish()
                     true
@@ -75,23 +79,30 @@ class KursusActivity : AppCompatActivity() {
         binding.back.setOnClickListener {
             finish()
         }
-        val selectedBabList = getSelectedBabList(dummyList, matapelajaran ?: "")
+
+        // Ambil daftar bab yang terpilih
+        val selectedBabList = getSelectedBabList(dummyList, matapelajaran)
         val adapter = BabAdapter(selectedBabList)
+
+        // Atur RecyclerView
         binding.rvBab.layoutManager = LinearLayoutManager(this)
         binding.rvBab.adapter = adapter
 
+        // Handle item click pada adapter
         adapter.setOnItemClickListener { babInfo ->
+            // Intent ke DaftarBabActivity dengan data yang diperlukan
             val intent = Intent(this@KursusActivity, DaftarBabActivity::class.java)
             intent.putExtra("USER_NAME", userName)
             intent.putExtra("MAPELAJARAN", matapelajaran)
-            intent.putExtra("USER_ID",userId)
-            intent.putExtra("USER_KELAS",kelas)
-            intent.putExtra("USER_USIA",usia)
-            // Add more data if needed
+            intent.putExtra("USER_ID", userId)
+            intent.putExtra("USER_KELAS", kelas)
+            intent.putExtra("USER_USIA", usia)
+            // Tambahkan data lain jika diperlukan
             startActivity(intent)
         }
     }
 
+    // Fungsi untuk mendapatkan daftar bab yang terpilih berdasarkan mata pelajaran
     fun getSelectedBabList(data: List<Buku>, mataPelajaran: String?): List<BabInfo> {
         val selectedBabList = mutableListOf<BabInfo>()
         mataPelajaran?.let { selectedMapel ->

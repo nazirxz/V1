@@ -67,7 +67,7 @@ class ResultActivity : AppCompatActivity() {
         // Ambil data dari Firebase
         getDataFromFirebase()
     }
-
+    // Fungsi untuk mengambil data table performasiswa dari Firebase
     private fun getDataFromFirebase() {
         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -99,6 +99,7 @@ class ResultActivity : AppCompatActivity() {
         })
     }
 
+    //membuat pie chart
     private fun createPieChart(entries: List<PieEntry>) {
         val dataSet = PieDataSet(entries, "Peforma siswa")
         dataSet.colors = mutableListOf(Color.RED, Color.GREEN, Color.BLUE)
@@ -109,7 +110,7 @@ class ResultActivity : AppCompatActivity() {
         pieChart.data = pieData
         pieChart.invalidate()
     }
-
+    //membuat bar chart
     private fun createBarChart(entries: List<BarEntry>) {
         val dataSet = BarDataSet(entries, "Peforma siswa")
         dataSet.colors = mutableListOf(Color.RED, Color.GREEN, Color.BLUE)
@@ -121,6 +122,7 @@ class ResultActivity : AppCompatActivity() {
         barChart.setFitBars(true)
         barChart.invalidate()
     }
+    //jika user menekan tombol back
     override fun onBackPressed() {
         AlertDialog.Builder(this@ResultActivity, R.style.AlertDialogTheme)
             .setTitle("Keluar dari Aplikasi")
