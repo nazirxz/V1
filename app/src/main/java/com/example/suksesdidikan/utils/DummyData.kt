@@ -18,36 +18,38 @@ object DummyData {
                 BabInfo(
                     "BAB 1 Meyakini Hari Akhir, Mengakhiri Kebiasaan Buruk ",
                     listOf(
-                        BabDetail("Renungkanlah", "Pernahkah kamu melihat orang yang sedang menanam pohon? Orang \n" +
-                                "yang menanam pohon mangga tentu berharap kelak akan memanen buah \n" +
-                                "mangga. Mereka yang menanam padi berharap akan memanen padi, \n" +
-                                "demikian juga yang menanam jagung, sagu, atau sorgum tentu berharap \n" +
-                                "akan memanen jagung, sagu, atau sorgum. Seperti itu pula kehidupan kita di \n" +
-                                "dunia ini. Kita diperintahkan untuk menanam kebaikan sebanyak-banyaknya, \n" +
-                                "agar kelak di akhirat dapat menuai atau memanen pahala atas tanaman \n" +
-                                "kebaikan itu.\n" +
-                                "Hal ini sangat sesuai dengan pesan Rasulullah saw. bahwa kehidupan \n" +
-                                "di dunia merupakan ladang untuk menanam. Kalau yang kita tanam adalah \n" +
-                                "kebaikan, kelak di akhirat kita akan memanen kebaikan. Sebaliknya, jika yang \n" +
-                                "kita tanam adalah keburukan, kelak yang akan kita panen adalah keburukan \n" +
-                                "yang telah kita perbuat.\n" +
-                                "Marilah kita merenung sejenak, pada hakikatnya hidup di dunia ini \n" +
-                                "hanyalah sebentar dan sementara. Tidak ada orang yang akan hidup \n" +
-                                "selamanya di dunia, bukan? Sayang sekali jika kesempatan yang tidak \n" +
-                                "lama ini tidak kita manfaatkan dengan sebaik-baiknya untuk mencari bekal \n" +
-                                "kehidupan di akhirat kelak. Banyak sekali orang yang menunda-nunda untuk \n" +
-                                "Gambar 1.4. Ibarat menanam pohon untuk dipanen di kemudian hari. Mari menanam \n" +
-                                "kebaikan di dunia untuk dipanen kelak di akhirat.\n" +
-                                "Sumber: temantaman.wordpress.com dan bbpp-lembang.infojpg\n" +
-                                "4 Kelas IX SMP/MTs Pendidikan Agama Islam dan Budi Pekerti\n" +
-                                "beramal baik dengan alasan masih banyak waktu. Para remaja menghabiskan \n" +
-                                "waktunya untuk berfoya-foya. Para pemuda menggunakan waktunya hanya \n" +
-                                "dengan bersenang-senang. Mereka lupa bahwa kematian dapat datang \n" +
-                                "secara tiba-tiba tanpa pernah diduga sama sekali. Begitu kematian telah \n" +
+                        BabDetail("Renungkanlah", "Pernahkah kamu melihat orang yang sedang menanam pohon? Orang " +
+                                "yang menanam pohon mangga tentu berharap kelak akan memanen buah " +
+                                "mangga. Mereka yang menanam padi berharap akan memanen padi, " +
+                                "demikian juga yang menanam jagung, sagu, atau sorgum tentu berharap " +
+                                "akan memanen jagung, sagu, atau sorgum. Seperti itu pula kehidupan kita di " +
+                                "dunia ini. Kita diperintahkan untuk menanam kebaikan sebanyak-banyaknya, " +
+                                "agar kelak di akhirat dapat menuai atau memanen pahala atas tanaman " +
+                                "kebaikan itu." +
+                                "\n\nHal ini sangat sesuai dengan pesan Rasulullah saw. bahwa kehidupan " +
+                                "di dunia merupakan ladang untuk menanam. Kalau yang kita tanam adalah " +
+                                "kebaikan, kelak di akhirat kita akan memanen kebaikan. Sebaliknya, jika yang " +
+                                "kita tanam adalah keburukan, kelak yang akan kita panen adalah keburukan " +
+                                "yang telah kita perbuat." +
+                                "\n" +
+                                "\nMarilah kita merenung sejenak, pada hakikatnya hidup di dunia ini " +
+                                "hanyalah sebentar dan sementara. Tidak ada orang yang akan hidup " +
+                                "selamanya di dunia, bukan? Sayang sekali jika kesempatan yang tidak " +
+                                "lama ini tidak kita manfaatkan dengan sebaik-baiknya untuk mencari bekal " +
+                                "kehidupan di akhirat kelak. Banyak sekali orang yang menunda-nunda untuk " +
+                                "Mari menanam " +
+                                "kebaikan di dunia untuk dipanen kelak di akhirat." +
+                                "beramal baik dengan alasan masih banyak waktu. Para remaja menghabiskan " +
+                                "waktunya untuk berfoya-foya. Para pemuda menggunakan waktunya hanya " +
+                                "dengan bersenang-senang. \n" +
+                                "\nMereka lupa bahwa kematian dapat datang " +
+                                "secara tiba-tiba tanpa pernah diduga sama sekali. Begitu kematian telah " +
                                 "datang, habislah kesempatan kita untuk menanam kebaikan.\n" +
-                                "Oleh karena itu, janganlah membuang waktu lagi. Marilah kita perbanyak \n" +
-                                "amal kebaikan dan hentikan kebiasaan buruk untuk menggapai kehidupan \n" +
-                                "akhirat yang lebih baik", 0),
+                                "\n" +
+                                "Oleh karena itu, janganlah membuang waktu lagi. Marilah kita perbanyak " +
+                                "amal kebaikan dan hentikan kebiasaan buruk untuk menggapai kehidupan " +
+                                "akhirat yang lebih baik" +
+                                "\n", 0),
                         BabDetail("Dialog Islami", "Farhan : “Masya Allah, Aziz. Aku tadi\n" +
                                 " melihat kecelakaan di jalan ”\n" +
                                 "Aziz : “O ya... apakah ada korban? Berapa?”\n" +
@@ -67,49 +69,53 @@ object DummyData {
                                 "celaka di akhirat. Rasanya lebih sakit bila dibandingkan kecelakaan \n" +
                                 "di dunia.”\n" +
                                 "Farhan : “Iya deh, besok aku rajin salat, Insya Allah. Terima kasih, kawan", 0),
-                        BabDetail("Refleksi Akhlak Mulia", "Nah, sekarang kamu tentunya menjadi makin yakin, bukan? Bahwa \n" +
-                                "hari akhir dan rangkaian peristiwanya kelak pasti akan terjadi. Pada hari itu, \n" +
-                                "manusia akan merasa tenang apabila mereka memiliki bekal amal yang baik. \n" +
-                                "Sebaliknya, manusia akan gelisah dan tersiksa apabila bekal yang dimilikinya \n" +
-                                "adalah perbuatan buruk selama di dunia", 0)
+                        BabDetail("Refleksi Akhlak Mulia", "Nah, sekarang kamu tentunya menjadi makin yakin, bukan? Bahwa " +
+                                "hari akhir dan rangkaian peristiwanya kelak pasti akan terjadi. Pada hari itu, " +
+                                "manusia akan merasa tenang apabila mereka memiliki bekal amal yang baik. " +
+                                "Sebaliknya, manusia akan gelisah dan tersiksa apabila bekal yang dimilikinya " +
+                                "adalah perbuatan buruk selama di dunia\n" +
+                                "\n", 0)
                     )
                 ),
                 BabInfo(
                     "BAB 2 Jujur dan Menepati Janji",
                     listOf(
                         BabDetail("Renungkanlah", "Sifat jujur dan menepati janji akan" +
-                                "membuat hidup tenang dan bahagia. \n" +
+                                "membuat hidup tenang dan bahagia. " +
                                 "Sebaliknya, kebohongan dan ingkar " +
-                                "janji membuat hidup sengsara, baik di \n" +
+                                "janji membuat hidup sengsara, baik di " +
                                 "dunia maupun akhirat. Berkata dusta " +
-                                "dan ingkar janji merupakan perilaku \n" +
+                                "dan ingkar janji merupakan perilaku " +
                                 "tercela yang harus dijauhi. Sungguh, " +
-                                "Allah Swt. akan membalas semua amal \n" +
+                                "Allah Swt. akan membalas semua amal " +
                                 "baik dan amal buruk di akhirat kelak " +
-                                "dengan balasan seadil-adilnya.\n" +
-                                "Wahai anak saleh, ketahuilah bahwa kesempurnaan iman seseorang \n" +
-                                "tercermin dari akhlaknya. Orang mukmin yang paling sempurna imannya \n" +
-                                "adalah yang paling baik akhlaknya. Lihatlah di sekitar kita, banyak orang \n" +
-                                "mengaku beriman tetapi buruk akhlaknya. Mereka mengaku beriman, tetapi \n" +
-                                "masih terbiasa berkata dusta dan ingkar janji. Sungguh sangat disayangkan, \n" +
-                                "seharusnya mereka menghiasi diri dengan sifat jujur dan menepati janji. \n" +
-                                "Sifat jujur dan menepati janji sangat dibutuhkan dalam pergaulan hidup \n" +
-                                "sehari-hari. Seseorang yang memiliki sifat jujur akan memiliki banyak kawan. \n" +
-                                "Mudah bergaul, dan dipercaya oleh orang lain. Kepercayaan dari orang lain \n" +
-                                "merupakan modal utama meraih hidup bahagia. Tidak ada seorang pun \n" +
-                                "yang mau ditipu dan diingkari janji. Seseorang disebut jujur apabila ada \n" +
-                                "kesamaan antara perkataan dan perbuatan. Allah Swt. Maha Melihat dan \n" +
-                                "Maha Mengetahui semua perbuatan dan isi hati hamba-Nya. \n" +
-                                "Menepati janji merupakan sifat orang beriman. Setiap janji adalah \n" +
-                                "hutang, hutang harus ditunaikan. Dalam sebuah hadits dikatakan bahwa \n" +
-                                "salah satu tanda orang munafik adalah mengingkari janji. Orang munafik \n" +
-                                "akan ditempatkan di neraka yang paling dasar. Tentu kamu tidak ingin \n" +
-                                "dimasukkan ke dalam kategori orang munafik. Di akhirat kelak, Allah Swt. \n" +
-                                "akan menempatkan orang munafik di dasar neraka. \n" +
-                                "Oleh karena itu, penting untuk diketahui dan diamalkan sifat jujur dan \n" +
-                                "menepati janji dalam kehidupan sehari-hari. Kedua sifat mulia ini akan \n" +
-                                "menjadikan hidup bahagia di dunia dan akhirat, serta memperoleh ridha \n" +
-                                "Allah Swt", 0),
+                                "dengan balasan seadil-adilnya." +
+                                "\n\nWahai anak saleh, ketahuilah bahwa kesempurnaan iman seseorang " +
+                                "tercermin dari akhlaknya. Orang mukmin yang paling sempurna imannya " +
+                                "adalah yang paling baik akhlaknya. Lihatlah di sekitar kita, banyak orang " +
+                                "mengaku beriman tetapi buruk akhlaknya. Mereka mengaku beriman, tetapi " +
+                                "masih terbiasa berkata dusta dan ingkar janji. Sungguh sangat disayangkan, " +
+                                "seharusnya mereka menghiasi diri dengan sifat jujur dan menepati janji. " +
+                                "Sifat jujur dan menepati janji sangat dibutuhkan dalam pergaulan hidup " +
+                                "sehari-hari. Seseorang yang memiliki sifat jujur akan memiliki banyak kawan. " +
+                                "Mudah bergaul, dan dipercaya oleh orang lain. Kepercayaan dari orang lain " +
+                                "merupakan modal utama meraih hidup bahagia. Tidak ada seorang pun " +
+                                "yang mau ditipu dan diingkari janji. Seseorang disebut jujur apabila ada " +
+                                "kesamaan antara perkataan dan perbuatan. Allah Swt. Maha Melihat dan " +
+                                "Maha Mengetahui semua perbuatan dan isi hati hamba-Nya. " +
+                                "\n" +
+                                "\nMenepati janji merupakan sifat orang beriman. Setiap janji adalah " +
+                                "hutang, hutang harus ditunaikan. Dalam sebuah hadits dikatakan bahwa " +
+                                "salah satu tanda orang munafik adalah mengingkari janji. Orang munafik " +
+                                "akan ditempatkan di neraka yang paling dasar. Tentu kamu tidak ingin " +
+                                "dimasukkan ke dalam kategori orang munafik. Di akhirat kelak, Allah Swt. " +
+                                "akan menempatkan orang munafik di dasar neraka. " +
+                                "\n" +
+                                "\nOleh karena itu, penting untuk diketahui dan diamalkan sifat jujur dan " +
+                                "menepati janji dalam kehidupan sehari-hari. Kedua sifat mulia ini akan " +
+                                "menjadikan hidup bahagia di dunia dan akhirat, serta memperoleh ridha " +
+                                "" +
+                                "Allah Swt\n\n", 0),
                         BabDetail("Dialog Islami", "Ibu Muna : Rasul saw. bersabda: “kejujuran akan membimbing kepada kebaikan, kebaikan \n" +
                                 "akan membimbing ke surga”. Kamu ingin masuk surga kan ?\n" +
                                 "Niha : ”Tentu, Bu Muna.”\n" +
@@ -127,7 +133,8 @@ object DummyData {
                                 "Niha : “Iya Bu, kita semua tahu bahwa pemimpin yang jujur akan dicintai rakyatnya.”\n" +
                                 "Ibu Muna : “Baik Niha, selamat melanjutkan aktivitas, ibu mau salat duha.\"\n" +
                                 "Niha : “Terima kasih atas waktunya, Bu, Assalamualaikum\"\n" +
-                                "Ibu Muna : \"Waalaikum Salam.", 0),
+                                "Ibu Muna : \"Waalaikum Salam.\n" +
+                                "\n", 0),
                     )
                 ),
                 BabInfo(
@@ -177,7 +184,8 @@ object DummyData {
                                 "\n" +
                                 "Esai:\n" +
                                 "\n" +
-                                "Bagaimana keyakinan akan Hari Akhir memotivasi seseorang untuk mengakhiri kebiasaan buruk yang dimiliki? Gambarkan peran keyakinan akan hari akhir dalam transformasi individu menuju perilaku yang lebih baik.", 0),
+                                "Bagaimana keyakinan akan Hari Akhir memotivasi seseorang untuk mengakhiri kebiasaan buruk yang dimiliki? Gambarkan peran keyakinan akan hari akhir dalam transformasi individu menuju perilaku yang lebih baik.\n" +
+                                "\n", 0),
                     )
                 ),
             )
@@ -194,45 +202,47 @@ object DummyData {
                BabInfo(
                    "BAB 1 Memahami Kedudukan dan Fungsi Pancasila",
                    listOf(
-                       BabDetail("Arti kedudukan dan Fungsi Pancasila", "1. Arti Kedudukan Pancasila\n" +
-                               "a. Filosofi Dasar\n" +
+                       BabDetail("Arti kedudukan dan Fungsi Pancasila", "\n1. Arti Kedudukan Pancasila\n" +
+                               "a. Filosofi Dasar\n\n" +
                                "Pancasila berasal dari bahasa Sansekerta yang terdiri dari dua kata, \"panca\" yang berarti lima, dan \"sila\" yang berarti prinsip atau asas. Sebagai dasar negara, Pancasila memiliki kedudukan sebagai panduan dalam kehidupan bermasyarakat, berbangsa, dan bernegara.\n" +
-                               "\n" +
+                               "\n\n" +
                                "b. Sumber dan Pembentukan Pancasila\n" +
-                               "Sumber Pancasila: Diilhami oleh nilai-nilai luhur bangsa Indonesia, Pancasila dipengaruhi oleh nilai-nilai adat, agama, budaya, serta pengalaman sejarah bangsa.\n" +
-                               "Pembentukan Pancasila: Dibentuk melalui proses yang melibatkan para founding fathers dalam memadukan nilai-nilai yang ada menjadi satu falsafah negara yang kokoh.\n" +
+                               "Sumber Pancasila: Diilhami oleh nilai-nilai luhur bangsa Indonesia, Pancasila dipengaruhi oleh nilai-nilai adat, agama, budaya, serta pengalaman sejarah bangsa." +
+                               "Pembentukan Pancasila: Dibentuk melalui proses yang melibatkan para founding fathers dalam memadukan nilai-nilai yang ada menjadi satu falsafah negara yang kokoh.\n\n" +
                                "2. Fungsi Pancasila\n" +
                                "a. Sebagai Ideologi Negara\n" +
-                               "Pedoman Berbangsa dan Bernegara: Menjadi landasan bagi setiap warga negara dalam bertindak dan berperilaku yang sesuai dengan nilai-nilai luhur Pancasila.\n" +
-                               "Perekat Keberagaman: Mengintegrasikan keberagaman masyarakat Indonesia menjadi satu kesatuan yang kuat tanpa menghilangkan keberagaman tersebut.\n" +
+                               "Pedoman Berbangsa dan Bernegara: Menjadi landasan bagi setiap warga negara dalam bertindak dan berperilaku yang sesuai dengan nilai-nilai luhur Pancasila." +
+                               "Perekat Keberagaman: Mengintegrasikan keberagaman masyarakat Indonesia menjadi satu kesatuan yang kuat tanpa menghilangkan keberagaman tersebut.\n\n" +
                                "b. Penjabaran Nilai-nilai Pancasila\n" +
                                "Ketuhanan Yang Maha Esa: Menghormati dan mengakui keberagaman keyakinan serta menjunjung tinggi nilai-nilai spiritualitas.\n" +
                                "Kemanusiaan yang Adil dan Beradab: Mendorong perlakuan adil bagi setiap individu tanpa memandang perbedaan apapun.\n" +
                                "Persatuan Indonesia: Mempertahankan kesatuan bangsa Indonesia di tengah perbedaan budaya, suku, agama, dan ras.\n" +
                                "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan: Menegaskan prinsip demokrasi dalam kehidupan berbangsa dan bernegara.\n" +
-                               "Keadilan Sosial bagi Seluruh Rakyat Indonesia: Menjamin pemerataan keadilan sosial, ekonomi, dan budaya bagi semua warga negara.", 0),
+                               "Keadilan Sosial bagi Seluruh Rakyat Indonesia: Menjamin pemerataan keadilan sosial, ekonomi, dan budaya bagi semua warga negara.\n" +
+                               "\n", 0),
                        BabDetail("Makna Pancasila sebagai Dasar Negara dan Pandangan Hidup", "2. Pancasila Sebagai Dasar Negara\n" +
                                "a. Kedudukan Pancasila dalam Konstitusi\n" +
                                "UUD 1945: Pancasila diakui sebagai dasar negara Indonesia yang tertuang dalam Pembukaan UUD 1945.\n" +
-                               "Landasan Hukum: Segala peraturan dan kebijakan negara harus sejalan dengan nilai-nilai Pancasila.\n" +
+                               "Landasan Hukum: Segala peraturan dan kebijakan negara harus sejalan dengan nilai-nilai Pancasila.\n\n" +
                                "b. Fungsi Pancasila dalam Kehidupan Berbangsa dan Bernegara\n" +
                                "Pedoman Bertindak: Menjadi panduan bagi setiap warga negara dalam bertindak dan berperilaku sesuai dengan nilai-nilai luhur Pancasila.\n" +
                                "Perekat Keberagaman: Mengintegrasikan keberagaman masyarakat Indonesia menjadi satu kesatuan yang kuat tanpa menghilangkan keberagaman tersebut.\n" +
-                               "3. Pancasila Sebagai Pandangan Hidup\n" +
+                               "\n3. Pancasila Sebagai Pandangan Hidup\n" +
                                "a. Nilai-nilai dalam Pancasila\n" +
                                "Ketuhanan Yang Maha Esa: Menghormati dan mengakui keberagaman keyakinan serta menjunjung tinggi nilai-nilai spiritualitas.\n" +
                                "Kemanusiaan yang Adil dan Beradab: Mendorong perlakuan adil bagi setiap individu tanpa memandang perbedaan apapun.\n" +
                                "Persatuan Indonesia: Mempertahankan kesatuan bangsa Indonesia di tengah perbedaan budaya, suku, agama, dan ras.\n" +
                                "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan: Menegaskan prinsip demokrasi dalam kehidupan berbangsa dan bernegara.\n" +
                                "Keadilan Sosial bagi Seluruh Rakyat Indonesia: Menjamin pemerataan keadilan sosial, ekonomi, dan budaya bagi semua warga negara.\n" +
-                               "b. Implementasi Nilai-nilai Pancasila dalam Kehidupan Sehari-hari\n" +
+                               "\nb. Implementasi Nilai-nilai Pancasila dalam Kehidupan Sehari-hari\n" +
                                "Sikap Toleransi dan Menghargai Perbedaan: Menjunjung tinggi keberagaman dan membangun hubungan yang harmonis di antara masyarakat yang memiliki perbedaan.\n" +
-                               "Partisipasi dalam Kehidupan Demokrasi: Mengaktifkan peran sebagai warga negara yang berperan aktif dalam proses demokrasi, termasuk pemilihan umum dan kegiatan partisipatif lainnya.", 0),
+                               "Partisipasi dalam Kehidupan Demokrasi: Mengaktifkan peran sebagai warga negara yang berperan aktif dalam proses demokrasi, termasuk pemilihan umum dan kegiatan partisipatif lainnya.\n" +
+                               "\n", 0),
                        BabDetail("Menyadari Pentingnya Kedudukan dan Fungsi Pancasila dalam Kehidupan Bangsa", "2. Kedudukan Pancasila dalam Bangsa Indonesia\n" +
                                "a. Sebagai Identitas Bangsa\n" +
                                "Pancasila Sebagai Landasan Negara: Menjadi dasar bagi negara Indonesia dalam berbagai kebijakan, hukum, dan pembangunan.\n" +
                                "Pancasila Sebagai Identitas Bangsa: Mewujudkan persatuan dalam keberagaman, menjaga keutuhan NKRI, dan memperkokoh jati diri bangsa Indonesia.\n" +
-                               "b. Fungsi Pancasila dalam Kehidupan Bangsa\n" +
+                               "\nb. Fungsi Pancasila dalam Kehidupan Bangsa\n" +
                                "Mengatasi Perbedaan dan Konflik: Sebagai landasan yang mempersatukan dalam menghadapi perbedaan agama, suku, budaya, dan ideologi.\n" +
                                "Mendorong Kebersamaan dan Solidaritas: Menggalang kesatuan dalam keberagaman, membangun kerja sama yang harmonis antara masyarakat.\n" +
                                "3. Implementasi Kedudukan dan Fungsi Pancasila dalam Kehidupan Sehari-hari\n" +
@@ -240,10 +250,11 @@ object DummyData {
                                "Sikap Toleransi dan Menghormati Perbedaan: Memiliki rasa saling menghargai terhadap perbedaan yang ada di sekitar kita.\n" +
                                "Partisipasi Aktif dalam Pembangunan: Menjadi agen perubahan yang berkontribusi aktif dalam pembangunan negara.\n" +
                                "Menjaga Keadilan dan Kesetaraan: Membangun kesadaran akan pentingnya keadilan sosial bagi seluruh lapisan masyarakat.\n" +
-                               "b. Peran Individu dalam Menerapkan Pancasila\n" +
+                               "\nb. Peran Individu dalam Menerapkan Pancasila\n" +
                                "Pendidikan Nilai Pancasila: Meningkatkan pemahaman dan kesadaran akan nilai-nilai Pancasila sejak dini.\n" +
                                "Keterlibatan dalam Masyarakat: Mengaktifkan peran sebagai warga negara yang aktif dalam membangun masyarakat yang beradab dan berkeadilan.\n" +
-                               "Penutup", 0),
+                               "\n" +
+                               "\n", 0),
 
                    )
                ),
@@ -256,7 +267,7 @@ object DummyData {
                                "a. Sebagai Prakata Konstitusi\n" +
                                "Sebagai Landasan Hukum: Menjadi landasan atau dasar hukum bagi konstitusi Indonesia, memberikan arah dan landasan bagi seluruh peraturan dan kebijakan negara.\n" +
                                "Sebagai Cerminan Falsafah Negara: Menggambarkan semangat, cita-cita, dan tujuan besar bangsa Indonesia.\n" +
-                               "b. Nilai-nilai yang Terkandung\n" +
+                               "\nb. Nilai-nilai yang Terkandung\n" +
                                "Ketuhanan Yang Maha Esa: Mengakui keberadaan Tuhan sebagai prinsip dalam kehidupan berbangsa dan bernegara.\n" +
                                "Kemanusiaan yang Adil dan Beradab: Menjamin perlakuan adil bagi setiap individu tanpa memandang perbedaan apapun.\n" +
                                "Persatuan Indonesia: Mempertahankan kesatuan bangsa Indonesia di tengah perbedaan budaya, suku, agama, dan ras.\n" +
@@ -266,7 +277,8 @@ object DummyData {
                                "a. Implementasi dalam Kehidupan Berbangsa dan Bernegara\n" +
                                "Pengakuan Terhadap Kedaulatan Rakyat: Mewujudkan prinsip demokrasi di mana kekuasaan tertinggi ada pada rakyat.\n" +
                                "Landasan dalam Pembangunan Negara: Menjadi pedoman dalam pembangunan nasional yang berkeadilan dan merata.\n" +
-                               "Mewujudkan Kerukunan dan Keadilan Sosial: Menjadi landasan dalam menjaga keutuhan sosial serta memastikan kesejahteraan sosial bagi seluruh rakyat Indonesia.", 0),
+                               "Mewujudkan Kerukunan dan Keadilan Sosial: Menjadi landasan dalam menjaga keutuhan sosial serta memastikan kesejahteraan sosial bagi seluruh rakyat Indonesia.\n" +
+                               "\n\n", 0),
                        BabDetail("Peraturan Perundang-undangan dalam Sistem Hukum Nasional", "Peraturan perundang-undangan adalah fondasi sistem hukum suatu negara yang mengatur berbagai aspek kehidupan masyarakat, pemerintahan, dan hukum. Memahami hierarki, proses pembentukan, serta peran peraturan perundang-undangan sangat penting dalam menjaga ketertiban dan keadilan dalam suatu negara.\n" +
                                "\n" +
                                "2. Jenis-jenis Peraturan Perundang-undangan\n" +
@@ -293,14 +305,15 @@ object DummyData {
                                "b. Konsekuensi Hukum\n" +
                                "Hukum yang Berlaku: Memberikan dasar bagi penegakan hukum dan penanganan konflik.\n" +
                                "c. Keseimbangan dan Keharmonisan Sistem Hukum\n" +
-                               "Menjaga Konsistensi: Pentingnya kepatuhan pada aturan hukum untuk menjaga stabilitas dan keseimbangan dalam sistem hukum suatu negara.", 0)
+                               "Menjaga Konsistensi: Pentingnya kepatuhan pada aturan hukum untuk menjaga stabilitas dan keseimbangan dalam sistem hukum suatu negara.\n" +
+                               "\n", 0)
                    )
                )
            )
        ),
        Buku(
            R.drawable.bindo,
-           "Bahasa Indonesia",
+           "B. Indonesia",
            "VII",
            "Mari budayakan berbahasa Indonesia",
            listOf(
@@ -328,7 +341,8 @@ object DummyData {
                                "Bahasa yang Jelas dan Objektif: Gunakan bahasa yang mudah dipahami dan tetap netral.\n" +
                                "b. Verifikasi Informasi\n" +
                                "Kredibilitas Informasi: Pastikan informasi yang disampaikan telah diverifikasi agar berita yang disampaikan akurat.\n" +
-                               "Pluralitas Sumber: Gunakan sumber yang beragam dan diverifikasi untuk mendapatkan informasi yang lebih lengkap.", 0),
+                               "Pluralitas Sumber: Gunakan sumber yang beragam dan diverifikasi untuk mendapatkan informasi yang lebih lengkap.\n" +
+                               "\n", 0),
                        BabDetail("Meringkas dan Menyimpulkan Berita","Meringkas dan menyimpulkan berita merupakan keterampilan penting dalam memahami serta mengkomunikasikan informasi yang relevan dari sebuah berita. Hal ini memungkinkan kita untuk memahami inti dari suatu peristiwa tanpa harus membaca keseluruhan artikel atau laporan berita.\n" +
                                "\n" +
                                "2. Meringkas Berita\n" +
@@ -351,7 +365,8 @@ object DummyData {
                                "Perhatikan Pokok-pokok Berita: Identifikasi informasi inti dan ringkaskan dengan kalimat yang tepat.\n" +
                                "b. Praktik Menyimpulkan\n" +
                                "Mengkomunikasikan Inti Berita: Ringkaslah inti dari berita yang dibaca dengan kalimat yang jelas dan padat.\n" +
-                               "Diskusikan Informasi Penting: Diskusikan bersama tentang informasi inti yang dihasilkan dari masing-masing siswa.",0),
+                               "Diskusikan Informasi Penting: Diskusikan bersama tentang informasi inti yang dihasilkan dari masing-masing siswa.\n" +
+                               "\n",0),
                        BabDetail("Menyampaikan Informasi dalam Bentuk Berita","Berita adalah cara yang efektif untuk menyampaikan informasi kepada khalayak umum tentang peristiwa atau kejadian terkini. Menyusun berita memerlukan keterampilan tertentu agar informasi dapat disampaikan dengan jelas, singkat, dan objektif.\n" +
                                "\n" +
                                "2. Struktur Berita\n" +
@@ -380,7 +395,8 @@ object DummyData {
                                "Perhatikan Struktur Berita: Praktekkan penyusunan dengan memperhatikan judul, pembukaan, badan berita, dan kesimpulan.\n" +
                                "b. Feedback dan Perbaikan\n" +
                                "Berikan Umpan Balik: Diskusikan berita yang telah disusun untuk saling memberikan masukan dan memperbaiki struktur berita.\n" +
-                               "Perbaiki Berdasarkan Masukan: Perbaiki berita berdasarkan umpan balik yang diberikan.",0),
+                               "Perbaiki Berdasarkan Masukan: Perbaiki berita berdasarkan umpan balik yang diberikan.\n" +
+                               "\n",0),
                    )
                ),
                BabInfo(
@@ -418,7 +434,8 @@ object DummyData {
                                "Diskusi tentang Efektivitas: Diskusikan mengapa unsur-unsur tersebut efektif atau tidak dalam menyampaikan pesan.\n" +
                                "b. Praktik Membuat Iklan, Slogan, dan Poster\n" +
                                "Buatlah Sendiri: Berdasarkan analisis, berikan siswa kesempatan untuk membuat iklan, slogan, atau poster dengan menggunakan unsur-unsur yang telah dipelajari.\n" +
-                               "Presentasi dan Umpan Balik: Siswa dapat mempresentasikan hasil karyanya dan mendapat umpan balik untuk perbaikan.", 0),
+                               "Presentasi dan Umpan Balik: Siswa dapat mempresentasikan hasil karyanya dan mendapat umpan balik untuk perbaikan.\n" +
+                               "\n", 0),
                        BabDetail("Menyimpulkan Pesan dan Informasi dalam Iklan","Iklan merupakan sarana penting dalam mempromosikan produk atau layanan kepada khalayak. Memahami pesan dan informasi yang disampaikan dalam iklan memungkinkan kita untuk mengevaluasi efektivitasnya serta memahami tujuan yang ingin dicapai.\n" +
                                "\n" +
                                "2. Mengidentifikasi Pesan Utama dalam Iklan\n" +
@@ -441,7 +458,8 @@ object DummyData {
                                "Membahas Tujuan Iklan: Diskusikan tujuan apa yang ingin dicapai dengan iklan tersebut.\n" +
                                "b. Diskusi tentang Efektivitas\n" +
                                "Evaluasi Pesan: Diskusikan apakah pesan yang disampaikan dalam iklan tersebut efektif atau tidak.\n" +
-                               "Diskusi Kreatif: Ajak siswa untuk berpikir kreatif dalam memahami dan mengevaluasi pesan iklan.",0),
+                               "Diskusi Kreatif: Ajak siswa untuk berpikir kreatif dalam memahami dan mengevaluasi pesan iklan.\n" +
+                               "\n",0),
                        BabDetail("Menelaah Pola, Struktur, dan Kaidah Kebahasaan Iklan","Iklan menggunakan pola, struktur, dan kaidah kebahasaan tertentu untuk menyampaikan pesan kepada audiens dengan cara yang efektif. Memahami elemen-elemen ini membantu kita dalam menganalisis dan memahami cara kerja iklan.\n" +
                                "\n" +
                                "2. Pola Kebahasaan dalam Iklan\n" +
@@ -474,7 +492,7 @@ object DummyData {
                                "Diskusi Efektivitas: Evaluasi mana yang menurut siswa lebih efektif dan mengapa.\n" +
                                "b. Latihan Menciptakan Iklan\n" +
                                "Praktik Kreatif: Berikan kesempatan kepada siswa untuk menciptakan iklan dengan menerapkan pola, struktur, dan kaidah kebahasaan yang dipelajari.\n" +
-                               "Presentasi dan Umpan Balik: Siswa dapat mempresentasikan iklan yang mereka buat dan mendapat umpan balik dari rekan-rekan mereka.",0),
+                               "Presentasi dan Umpan Balik: Siswa dapat mempresentasikan iklan yang mereka buat dan mendapat umpan balik dari rekan-rekan mereka.\n\n",0),
                    )
                ),
                BabInfo(
@@ -539,7 +557,8 @@ object DummyData {
                                "Diskusi tentang Pernyataan Tesis: Diskusikan bagaimana pernyataan tesis tersebut didukung oleh ide-ide utama.\n" +
                                "b. Praktik Menyimpulkan\n" +
                                "Ringkasan Teks: Berikan teks eksposisi yang berbeda kepada siswa dan minta mereka untuk membuat ringkasan singkat namun komprehensif.\n" +
-                               "Umpan Balik dan Perbaikan: Berikan umpan balik pada ringkasan mereka dan dorong perbaikan.",0),
+                               "Umpan Balik dan Perbaikan: Berikan umpan balik pada ringkasan mereka dan dorong perbaikan.\n" +
+                               "\n",0),
                        BabDetail("Menelaah Struktur dan Kaidah Teks Eksposisi","Teks eksposisi merupakan jenis teks yang bertujuan untuk menguraikan, menjelaskan, atau mendiskusikan suatu topik dengan cara yang sistematis dan terperinci. Memahami struktur dan kaidah dalam teks eksposisi membantu dalam menganalisis dan memahami cara penyajian informasi.\n" +
                                "\n" +
                                "2. Struktur Teks Eksposisi\n" +
@@ -572,7 +591,8 @@ object DummyData {
                                "Diskusi tentang Efektivitas: Diskusikan bagaimana struktur dan kaidah dalam teks tersebut mendukung pemahaman pembaca.\n" +
                                "b. Praktik Menulis Teks Eksposisi\n" +
                                "Menyusun Teks: Berikan tugas kepada siswa untuk menulis teks eksposisi sesuai dengan kaidah-kaidah yang dipelajari.\n" +
-                               "Umpan Balik dan Perbaikan: Berikan umpan balik pada teks yang ditulis siswa untuk peningkatan.",0),
+                               "Umpan Balik dan Perbaikan: Berikan umpan balik pada teks yang ditulis siswa untuk peningkatan.\n" +
+                               "\n",0),
                    )
                ),
                BabInfo(
@@ -613,7 +633,7 @@ object DummyData {
                                "Jawaban akan mencakup perbandingan struktur yang lebih sistematis dan terperinci dalam teks eksposisi, yang lebih berfokus pada fakta, data, dan penjelasan mendalam, sementara teks naratif lebih terfokus pada plot, karakter, dan alur cerita.\n" +
                                "Identifikasi kaidah-kaidah bahasa yang memengaruhi kejelasan dan keterkaitan dalam teks eksposisi yang telah Anda baca. Jelaskan bagaimana kaidah-kaidah tersebut mendukung pemahaman keseluruhan teks.\n" +
                                "\n" +
-                               "Jawaban akan bervariasi, namun dapat mencakup penggunaan kata penghubung, struktur kalimat yang jelas, dan penggunaan bahasa yang tepat, semuanya mendukung aliran logis dan kesinambungan ide-ide dalam teks eksposisi.", 0)
+                               "Jawaban akan bervariasi, namun dapat mencakup penggunaan kata penghubung, struktur kalimat yang jelas, dan penggunaan bahasa yang tepat, semuanya mendukung aliran logis dan kesinambungan ide-ide dalam teks eksposisi.\n\n", 0)
                    )
                )
            )

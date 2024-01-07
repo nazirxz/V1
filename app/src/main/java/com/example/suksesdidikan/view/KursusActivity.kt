@@ -31,10 +31,12 @@ class KursusActivity : AppCompatActivity() {
         val avatar = intent.getIntExtra("AVATAR", 0)
         val matapelajaran = intent.getStringExtra("MAPELAJARAN")
         val deskripsi = intent.getStringExtra("DESKRIPSI")
-        val userId = intent.getStringExtra("USER_ID")
         val userName = intent.getStringExtra("USER_NAME")
+        val userId = intent.getStringExtra("USER_ID")
         val kelas = intent.getStringExtra("USER_KELAS")
         val usia = intent.getStringExtra("USER_USIA")
+
+
 
         // Tampilkan data dalam layout activity_kursus
         binding.tvMatapelajaran.text = matapelajaran
@@ -108,8 +110,9 @@ class KursusActivity : AppCompatActivity() {
             // Tambahkan data lain jika diperlukan
             startActivity(intent)
         }
+        // Handle lastActiveTimestamp update
+        updateUserLastActiveTimestamp(userId!!)
     }
-    //fungsi untuk menyimpan durasi user membuka aplikasi
     private fun updateUserLastActiveTimestamp(userId: String) {
         val database = FirebaseDatabase.getInstance().reference
         val sessionEndTime = SystemClock.uptimeMillis()
@@ -163,9 +166,6 @@ class KursusActivity : AppCompatActivity() {
                 Log.e("Firebase", "Error: ${databaseError.message}")
             }
         })
-
-        //inisialisasi menghitung durasi user
-        updateUserLastActiveTimestamp(userId!!)
     }
 
     // Fungsi untuk mendapatkan daftar bab yang terpilih berdasarkan mata pelajaran
