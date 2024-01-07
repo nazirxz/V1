@@ -3,6 +3,8 @@ package com.example.suksesdidikan.view
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.SystemClock
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.suksesdidikan.R
@@ -22,11 +24,14 @@ import com.google.firebase.database.ValueEventListener
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
     private lateinit var databaseReference: DatabaseReference
+    private var sessionStartTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        sessionStartTime = SystemClock.uptimeMillis()
         val userName = intent.getStringExtra("USER_NAME")
         val userId = intent.getStringExtra("USER_ID")
         val kelas = intent.getStringExtra("USER_KELAS")
@@ -66,6 +71,10 @@ class ResultActivity : AppCompatActivity() {
 
         // Ambil data dari Firebase
         getDataFromFirebase()
+
+
+        //inisialisasi menghitung durasi user
+        updateUserLastActiveTimestamp(userId!!)
     }
     // Fungsi untuk mengambil data table performasiswa dari Firebase
     private fun getDataFromFirebase() {
@@ -122,6 +131,62 @@ class ResultActivity : AppCompatActivity() {
         barChart.setFitBars(true)
         barChart.invalidate()
     }
+    //fungsi untuk menyimpan durasi user membuka aplikasi
+    private fun updateUserLastActiveTimestamp(userId: String) {
+        val database = FirebaseDatabase.getInstance().reference
+        val sessionEndTime = SystemClock.uptimeMillis()
+        val sessionDuration = sessionEndTime - sessionStartTime
+        val userName = intent.getStringExtra("USER_NAME")
+        val kelas = intent.getStringExtra("USER_KELAS") ?: ""
+        val usia = intent.getStringExtra("USER_USIA") ?: ""
+
+        val aktivitasRef = database.child("aktivitas").child(userId)
+
+        aktivitasRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    val existingData = dataSnapshot.value as? Map<String, Any>
+
+                    existingData?.let {
+                        val existingDuration = it["lastActiveDuration"] as? Long ?: 0
+                        val updatedDuration = existingDuration + sessionDuration
+
+                        val updateMap = HashMap<String, Any>()
+                        updateMap["lastActiveDuration"] = updatedDuration
+                        updateMap["userName"] = userName!!
+                        updateMap["kelas"] = kelas!!
+                        updateMap["usia"] = usia!!
+                        aktivitasRef.updateChildren(updateMap)
+                            .addOnSuccessListener {
+                                Log.d("Firebase", "Updated lastActiveDuration for user $userId")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.e("Firebase", "Failed to update lastActiveDuration for user $userId: ${e.message}")
+                            }
+                    }
+                } else {
+                    val sessionData = HashMap<String, Any>()
+                    sessionData["lastActiveDuration"] = sessionDuration
+                    sessionData["userName"] = userName!!
+                    sessionData["kelas"] = kelas!!
+                    sessionData["usia"] = usia!!
+
+                    database.child("aktivitas").child(userId).setValue(sessionData)
+                        .addOnSuccessListener {
+                            Log.d("Firebase", "Created new entry for lastActiveDuration for user $userId")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.e("Firebase", "Failed to create new entry for lastActiveDuration for user $userId: ${e.message}")
+                        }
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.e("Firebase", "Error: ${databaseError.message}")
+            }
+        })
+    }
+
     //jika user menekan tombol back
     override fun onBackPressed() {
         AlertDialog.Builder(this@ResultActivity, R.style.AlertDialogTheme)
@@ -134,5 +199,22 @@ class ResultActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .show()
+    }
+
+
+    //Fungsi jika aplikasi dibuka kembali
+    override fun onResume() {
+        super.onResume()
+        val userId = intent.getStringExtra("USER_ID")
+        updateUserLastActiveTimestamp(userId!!)
+
+    }
+
+    //Fungsi jika aplikasi membuka app luar
+    override fun onPause() {
+        super.onPause()
+        val userId = intent.getStringExtra("USER_ID")
+        updateUserLastActiveTimestamp(userId!!)
+
     }
 }

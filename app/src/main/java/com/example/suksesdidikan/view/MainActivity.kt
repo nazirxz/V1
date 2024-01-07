@@ -124,21 +124,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //Fungsi jika aplikasi dibuka kembali
-    override fun onResume() {
-        super.onResume()
-        val userId = intent.getStringExtra("USER_ID")
-        updateUserLastActiveTimestamp(userId!!)
-
-    }
-
-    //Fungsi jika aplikasi membuka app luar
-    override fun onPause() {
-        super.onPause()
-        val userId = intent.getStringExtra("USER_ID")
-        updateUserLastActiveTimestamp(userId!!)
-
-    }
 
     //fungsi untuk menyimpan durasi user membuka aplikasi
     private fun updateUserLastActiveTimestamp(userId: String) {
@@ -196,4 +181,19 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    //Fungsi jika aplikasi dibuka kembali
+    override fun onResume() {
+        super.onResume()
+        val userId = intent.getStringExtra("USER_ID")
+        updateUserLastActiveTimestamp(userId!!)
+
+    }
+
+    //Fungsi jika aplikasi membuka app luar
+    override fun onPause() {
+        super.onPause()
+        val userId = intent.getStringExtra("USER_ID")
+        updateUserLastActiveTimestamp(userId!!)
+
+    }
 }
