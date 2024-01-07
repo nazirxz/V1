@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "244509147510",
-    "firebase_url": "https://suksesdidikan-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "suksesdidikan",
-    "storage_bucket": "suksesdidikan.appspot.com"
+    "project_number": "662485042580",
+    "firebase_url": "https://suksesdidikan-f558f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "suksesdidikan-f558f",
+    "storage_bucket": "suksesdidikan-f558f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:244509147510:android:d5cfcd1d789a7c1cc7fa57",
+        "mobilesdk_app_id": "1:662485042580:android:0a30c8bf133faa66f9fb81",
         "android_client_info": {
           "package_name": "com.example.suksesdidikan"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA2hGgx9n0E_ADAaGVVXpzyGCERLxHOrqU"
+          "current_key": "AIzaSyCBgXsiFWUmbsS5PMeW2zJ6ZXa3A2cCHfw"
         }
       ],
       "services": {
